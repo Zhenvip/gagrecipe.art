@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about GagRecipe - our mission to make cooking fun, creative, and filled with laughter.">
+    <meta name="keywords" content="about GagRecipe, fun cooking, creative recipes, cooking community">
+    <title>About Us | GagRecipe</title>
+    <link rel="icon" href="path_to_your_logo.png">
+    
+    <!-- Plausible Analytics -->
+    <script defer data-domain="gagrecipe.art" src="https://click.pageview.click/js/script.js"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PXR7WHTCC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6PXR7WHTCC');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-top: 1rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+        
+        nav a:hover {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .content-section h2 {
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .content-section h3 {
+            color: #4ecdc4;
+            margin: 1.5rem 0 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .content-section p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .highlight-box h2 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .value-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff6b6b;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .value-card h3 {
+            color: #ff6b6b;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 2rem 1rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-weight: 600;
+        }
+        
+        .team-section {
+            text-align: center;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .team-member {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .team-member h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-role {
+            color: #ff6b6b;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .team-bio {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(to bottom, #ff6b6b, #4ecdc4);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 2rem;
+            position: relative;
+            margin: 2rem 0;
+            width: 50%;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            align-self: flex-end;
+            justify-content: flex-start;
+            padding-left: 2rem;
+            padding-right: 0;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+        }
+        
+        .timeline-date {
+            color: #ff6b6b;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 3px solid #ff6b6b;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            margin: 3rem 2rem 2rem;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .footer-content ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-content a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-content a:hover {
+            color: #ff6b6b;
+        }
+        
+        footer p {
+            color: #999;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            main {
+                padding: 1rem;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
+            
+            .values-grid,
+            .stats-container,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+            
+            .timeline-item::before {
+                left: 20px;
+            }
+            
+            .footer-content ul {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg" style="height: 50px;">
+                  <defs>
+                    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#ff6b6b"/>
+                      <stop offset="50%" style="stop-color:#4ecdc4"/>
+                      <stop offset="100%" style="stop-color:#45b7d1"/>
+                    </linearGradient>
+                  </defs>
+                  
+                  <!-- Chef hat -->
+                  <ellipse cx="20" cy="35" rx="15" ry="8" fill="#fff"/>
+                  <rect x="10" y="20" width="20" height="18" fill="#fff"/>
+                  <ellipse cx="20" cy="20" rx="10" ry="5" fill="#fff"/>
+                  
+                  <!-- Chef hat decoration -->
+                  <circle cx="15" cy="15" r="1.5" fill="#ff6b6b"/>
+                  <circle cx="20" cy="12" r="1.5" fill="#4ecdc4"/>
+                  <circle cx="25" cy="15" r="1.5" fill="#45b7d1"/>
+                  
+                  <!-- Cooking utensils -->
+                  <!-- Spoon -->
+                  <ellipse cx="32" cy="15" rx="2" ry="4" fill="#C0C0C0"/>
+                  <rect x="31" y="19" width="2" height="15" fill="#C0C0C0"/>
+                  
+                  <!-- Fork -->
+                  <rect x="36" y="12" width="0.5" height="5" fill="#C0C0C0"/>
+                  <rect x="37" y="12" width="0.5" height="5" fill="#C0C0C0"/>
+                  <rect x="38" y="12" width="0.5" height="5" fill="#C0C0C0"/>
+                  <rect x="35.5" y="17" width="3" height="17" fill="#C0C0C0"/>
+                  
+                  <!-- Text "GagRecipe" -->
+                  <text x="45" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="url(#logoGrad)">Gag</text>
+                  <text x="45" y="35" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="url(#logoGrad)">Recipe</text>
+                  
+                  <!-- Fun elements -->
+                  <circle cx="100" cy="15" r="2" fill="#ffeb3b"/>
+                  <circle cx="110" cy="25" r="1.5" fill="#ff6b6b"/>
+                  <circle cx="120" cy="35" r="2" fill="#4ecdc4"/>
+                  
+                  <!-- Smile -->
+                  <path d="M 105 40 Q 115 45 125 40" stroke="#ff6b6b" stroke-width="2" fill="none"/>
+                </svg>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/recipes">Recipes</a></li>
+                    <li><a href="/videos">Videos</a></li>
+                    <li><a href="/community">Community</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>About GagRecipe</h1>
+            <p>Where cooking meets comedy and every meal is an adventure filled with laughter!</p>
+        </div>
+
+        <div class="highlight-box">
+            <h2>🎭 Our Mission</h2>
+            <p>To transform kitchens around the world into spaces of joy, creativity, and uncontrollable laughter. We believe cooking should be fun, food should make you smile, and every recipe should come with a side of giggles!</p>
+        </div>
+
+        <div class="content-section">
+            <h2>🌟 Our Story</h2>
+            <p>GagRecipe was born from a simple idea: cooking doesn't have to be serious! Founded in 2024, we started as a small blog sharing funny food fails and ridiculous recipe experiments. What began as a joke between friends quickly grew into a community of food enthusiasts who believe that the best ingredient in any dish is laughter.</p>
+            
+            <p>Our journey started when our founder accidentally created a pizza that looked exactly like their pet cat. Instead of throwing it away, they shared the photo online with a funny caption. The response was overwhelming – people loved the idea of food that could make them laugh!</p>
+            
+            <p>Today, GagRecipe has evolved into a full-fledged platform where creativity meets cuisine, where mistakes become masterpieces, and where every cooking disaster is just another opportunity for fun.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>💡 What We Do</h2>
+            <p>At GagRecipe, we specialize in making cooking an entertaining experience:</p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🍕</div>
+                    <h3>Funny Recipes</h3>
+                    <p>Creative recipes that will make you laugh while you cook and eat</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">📱</div>
+                    <h3>Entertaining Videos</h3>
+                    <p>Hilarious cooking videos that show the fun side of food preparation</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">👥</div>
+                    <h3>Community Fun</h3>
+                    <p>A platform where food lovers share their amusing culinary adventures</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🎨</div>
+                    <h3>Creative Inspiration</h3>
+                    <p>Ideas to turn ordinary ingredients into extraordinary entertainment</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>📊 Fun Facts & Stats</h2>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Funny Recipes</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">50k+</div>
+                    <div class="stat-label">Monthly Laughs</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Video Tutorials</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">25k+</div>
+                    <div class="stat-label">Community Members</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section team-section">
+            <h2>👨‍🍳 Meet Our Team</h2>
+            <p>The wonderful people behind the culinary chaos and delicious disasters!</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-avatar">👨‍🍳</div>
+                    <h3>Chef Gigglesworth</h3>
+                    <div class="team-role">Head of Hilarious Cooking</div>
+                    <p class="team-bio">Master of turning kitchen disasters into delightful surprises. Has been making people laugh with food for over 10 years.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-avatar">📸</div>
+                    <h3>Luna Snapshot</h3>
+                    <div class="team-role">Content Creator</div>
+                    <p class="team-bio">Captures all our cooking chaos on camera and turns our fails into viral content that brings joy to millions.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-avatar">🎨</div>
+                    <h3>Artie Foodie</h3>
+                    <div class="team-role">Creative Director</div>
+                    <p class="team-bio">The mastermind behind our visual humor and food presentation magic. Makes every dish Instagram-ready!</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-avatar">💻</div>
+                    <h3>Tech Tastebud</h3>
+                    <div class="team-role">Technical Wizard</div>
+                    <p class="team-bio">Keeps our website running smoothly while developing new features to enhance your cooking comedy experience.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>🚀 Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">January 2024</div>
+                        <h3>The Great Pizza Disaster</h3>
+                        <p>Our founder's pizza mishap goes viral, inspiring the creation of GagRecipe</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">March 2024</div>
+                        <h3>First 100 Recipes</h3>
+                        <p>Reached our first milestone of 100 funny recipes that actually taste good!</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">June 2024</div>
+                        <h3>Video Launch</h3>
+                        <p>Started creating hilarious cooking videos that became an instant hit</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">September 2024</div>
+                        <h3>Community Growth</h3>
+                        <p>Our community reached 10,000 members sharing their own funny food creations</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">December 2024</div>
+                        <h3>Award Recognition</h3>
+                        <p>Won "Most Creative Food Content" at the Digital Culinary Awards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>🎯 Our Values</h2>
+            <h3>Fun First</h3>
+            <p>We believe cooking should be enjoyable, not stressful. Every recipe we create is designed to bring a smile to your face.</p>
+            
+            <h3>Creativity Over Perfection</h3>
+            <p>We celebrate the beautiful disasters and encourage experimentation. Sometimes the best discoveries come from happy accidents!</p>
+            
+            <h3>Community Connection</h3>
+            <p>Food brings people together, and laughter makes those connections even stronger. We're building a global community of joy through cooking.</p>
+            
+            <h3>Accessibility for All</h3>
+            <p>Our recipes are designed to be approachable for cooks of all skill levels. From beginners to experts, everyone can join the fun!</p>
+            
+            <h3>Positivity & Encouragement</h3>
+            <p>We maintain a positive, encouraging environment where everyone feels welcome to share their culinary adventures, no matter how they turn out.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>🌍 Join Our Movement</h2>
+            <p>GagRecipe is more than just a website – it's a movement to bring joy back to cooking. We're on a mission to help people rediscover the fun in food preparation and to show that the kitchen can be a place of laughter, creativity, and delicious surprises.</p>
+            
+            <p>Whether you're a seasoned chef looking to add some humor to your repertoire, a beginner cook who wants to learn while having fun, or someone who just loves food and laughter, you're welcome here!</p>
+            
+            <p>Join thousands of cooking enthusiasts who have already discovered that the secret ingredient to any great dish is a generous helping of joy. Let's cook, laugh, and create memories together!</p>
+        </div>
+
+        <div class="highlight-box">
+            <h2>🎉 Ready to Start Cooking with Comedy?</h2>
+            <p>Dive into our collection of hilarious recipes and start your own funny food adventure today. Remember: in our kitchen, there are no mistakes – only happy accidents waiting to become legendary recipes!</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <ul>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/terms">Terms & Conditions</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2025 GagRecipe. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Add some interactive animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Animate elements as they come into view
+        document.querySelectorAll('.content-section, .value-card, .stat-card, .team-member').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Counter animation for stats
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + '+';
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + '+';
+                }
+            }, 20);
+        }
+
+        // Trigger counter animations when stats come into view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const numbers = entry.target.querySelectorAll('.stat-number');
+                    numbers.forEach(num => {
+                        const text = num.textContent;
+                        const target = parseInt(text.replace(/[^\d]/g, ''));
+                        animateCounter(num, target);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsContainer = document.querySelector('.stats-container');
+        if (statsContainer) {
+            statsObserver.observe(statsContainer);
+        }
+
+        // Add hover effects to team members
+        document.querySelectorAll('.team-member').forEach(member => {
+            member.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            member.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
