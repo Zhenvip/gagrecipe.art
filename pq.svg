@@ -1,0 +1,124 @@
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="plateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff"/>
+      <stop offset="100%" style="stop-color:#f8f8ff"/>
+    </linearGradient>
+    <radialGradient id="strawberryIce" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFB6C1"/>
+      <stop offset="100%" style="stop-color:#FF69B4"/>
+    </radialGradient>
+    <radialGradient id="vanillaIce" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFF8DC"/>
+      <stop offset="100%" style="stop-color:#F5DEB3"/>
+    </radialGradient>
+    <radialGradient id="chocolateIce" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#DEB887"/>
+      <stop offset="100%" style="stop-color:#8B4513"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="300" height="200" fill="#fd79a8"/>
+  
+  <!-- Plate -->
+  <ellipse cx="150" cy="130" rx="120" ry="50" fill="url(#plateGrad)" stroke="#ddd" stroke-width="2"/>
+  
+  <!-- Banana halves -->
+  <ellipse cx="80" cy="125" rx="35" ry="8" fill="#FFE135" transform="rotate(-10 80 125)"/>
+  <ellipse cx="220" cy="125" rx="35" ry="8" fill="#FFE135" transform="rotate(10 220 125)"/>
+  
+  <!-- Banana texture -->
+  <path d="M 60 125 Q 80 120 100 125" stroke="#F4D03F" stroke-width="2" fill="none"/>
+  <path d="M 200 125 Q 220 120 240 125" stroke="#F4D03F" stroke-width="2" fill="none"/>
+  
+  <!-- Ice cream scoops in the middle -->
+  <circle cx="125" cy="115" r="18" fill="url(#strawberryIce)"/>
+  <circle cx="150" cy="115" r="18" fill="url(#vanillaIce)"/>
+  <circle cx="175" cy="115" r="18" fill="url(#chocolateIce)"/>
+  
+  <!-- Funny faces on ice cream scoops -->
+  <!-- Strawberry scoop face -->
+  <circle cx="120" cy="110" r="1.5" fill="#333"/>
+  <circle cx="130" cy="110" r="1.5" fill="#333"/>
+  <path d="M 118 118 Q 125 122 132 118" stroke="#333" stroke-width="1.5" fill="none"/>
+  
+  <!-- Vanilla scoop face (winking) -->
+  <circle cx="145" cy="110" r="1.5" fill="#333"/>
+  <path d="M 153 108 L 157 110 L 153 112" stroke="#333" stroke-width="1.5" fill="none"/>
+  <ellipse cx="150" cy="120" rx="4" ry="2" fill="#333"/>
+  
+  <!-- Chocolate scoop face (surprised) -->
+  <circle cx="170" cy="110" r="1.5" fill="#333"/>
+  <circle cx="180" cy="110" r="1.5" fill="#333"/>
+  <ellipse cx="175" cy="120" rx="3" ry="4" fill="#333"/>
+  
+  <!-- Whipped cream on each scoop -->
+  <ellipse cx="125" cy="100" rx="8" ry="4" fill="#FFF"/>
+  <ellipse cx="150" cy="100" rx="8" ry="4" fill="#FFF"/>
+  <ellipse cx="175" cy="100" rx="8" ry="4" fill="#FFF"/>
+  
+  <!-- Cherries on top -->
+  <circle cx="125" cy="95" r="3" fill="#DC143C"/>
+  <circle cx="150" cy="95" r="3" fill="#DC143C"/>
+  <circle cx="175" cy="95" r="3" fill="#DC143C"/>
+  
+  <!-- Cherry stems -->
+  <path d="M 125 92 Q 127 88 130 90" stroke="#228B22" stroke-width="1" fill="none"/>
+  <path d="M 150 92 Q 152 88 155 90" stroke="#228B22" stroke-width="1" fill="none"/>
+  <path d="M 175 92 Q 177 88 180 90" stroke="#228B22" stroke-width="1" fill="none"/>
+  
+  <!-- Colorful toppings -->
+  <!-- Rainbow sprinkles -->
+  <rect x="115" y="85" width="3" height="1" fill="#FF0000" transform="rotate(45 116.5 85.5)"/>
+  <rect x="140" y="88" width="3" height="1" fill="#00FF00" transform="rotate(-30 141.5 88.5)"/>
+  <rect x="165" y="85" width="3" height="1" fill="#0000FF" transform="rotate(60 166.5 85.5)"/>
+  <rect x="160" y="100" width="3" height="1" fill="#FFD700" transform="rotate(-45 161.5 100.5)"/>
+  <rect x="135" y="105" width="3" height="1" fill="#FF1493" transform="rotate(30 136.5 105.5)"/>
+  
+  <!-- Nuts scattered -->
+  <ellipse cx="110" cy="110" rx="2" ry="3" fill="#DEB887" transform="rotate(45 110 110)"/>
+  <ellipse cx="190" cy="115" rx="2" ry="3" fill="#DEB887" transform="rotate(-30 190 115)"/>
+  <ellipse cx="100" cy="135" rx="2" ry="3" fill="#DEB887" transform="rotate(60 100 135)"/>
+  <ellipse cx="200" cy="135" rx="2" ry="3" fill="#DEB887" transform="rotate(-60 200 135)"/>
+  
+  <!-- Chocolate sauce drizzle -->
+  <path d="M 115 125 Q 120 130 125 135 Q 130 140 135 135" stroke="#8B4513" stroke-width="3" fill="none"/>
+  <path d="M 165 125 Q 170 130 175 135 Q 180 140 185 135" stroke="#8B4513" stroke-width="3" fill="none"/>
+  
+  <!-- Caramel sauce -->
+  <path d="M 140 130 Q 150 135 160 130" stroke="#DAA520" stroke-width="3" fill="none"/>
+  
+  <!-- Decorative elements around the plate -->
+  <circle cx="50" cy="80" r="3" fill="#FF69B4"/>
+  <circle cx="250" cy="85" r="3" fill="#32CD32"/>
+  <circle cx="70" cy="160" r="3" fill="#FFD700"/>
+  <circle cx="230" cy="165" r="3" fill="#FF4500"/>
+  
+  <!-- Fun spoons -->
+  <ellipse cx="40" cy="100" rx="4" ry="8" fill="#C0C0C0"/>
+  <rect x="38" y="108" width="4" height="20" fill="#C0C0C0"/>
+  
+  <ellipse cx="260" cy="105" rx="4" ry="8" fill="#C0C0C0"/>
+  <rect x="258" y="113" width="4" height="20" fill="#C0C0C0"/>
+  
+  <!-- Sparkles -->
+  <g fill="#FFD700" opacity="0.8">
+    <polygon points="30,50 32,55 37,55 33,58 35,63 30,60 25,63 27,58 23,55 28,55"/>
+    <polygon points="270,50 272,55 277,55 273,58 275,63 270,60 265,63 267,58 263,55 268,55"/>
+    <polygon points="60,30 62,35 67,35 63,38 65,43 60,40 55,43 57,38 53,35 58,35"/>
+  </g>
+  
+  <!-- Fun confetti -->
+  <g>
+    <rect x="45" y="70" width="4" height="2" fill="#ff6b6b" transform="rotate(30 47 71)"/>
+    <rect x="255" y="75" width="4" height="2" fill="#4ecdc4" transform="rotate(-45 257 76)"/>
+    <rect x="80" y="40" width="4" height="2" fill="#6c5ce7" transform="rotate(60 82 41)"/>
+    <rect x="220" y="45" width="4" height="2" fill="#00b894" transform="rotate(-30 222 46)"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="150" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#333">
+    Banana Split Extravaganza!
+  </text>
+</svg>
