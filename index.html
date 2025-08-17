@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GagRecipe: A creative and humorous recipe website that brings joy and fun to cooking.">
-    <meta name="keywords" content="gag recipe, funny recipes, creative cooking, humorous cooking, fun food ideas">
-    <title>GagRecipe | Fun & Creative Recipes</title>
+    <meta name="description" content="Watch hilarious cooking videos and tutorials that will make you laugh while you learn to cook.">
+    <meta name="keywords" content="cooking videos, funny cooking, TikTok recipes, cooking tutorials">
+    <title>Videos | GagRecipe</title>
     <link rel="icon" href="path_to_your_logo.png">
-    <link rel="stylesheet" href="styles.css">
     
     <!-- Plausible Analytics -->
     <script defer data-domain="gagrecipe.art" src="https://click.pageview.click/js/script.js"></script>
@@ -50,11 +49,6 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
         
-        .logo img {
-            height: 50px;
-            width: auto;
-        }
-        
         nav ul {
             display: flex;
             list-style: none;
@@ -70,7 +64,7 @@
             border-radius: 25px;
         }
         
-        nav a:hover {
+        nav a:hover, nav a.active {
             background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
             color: white;
             transform: translateY(-2px);
@@ -82,7 +76,8 @@
             padding: 2rem;
         }
         
-        #hero {
+        .page-header {
+            text-align: center;
             margin: 3rem 0;
             padding: 3rem;
             background: rgba(255, 255, 255, 0.9);
@@ -90,14 +85,7 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
         
-        .hero-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .hero-content h2 {
+        .page-header h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
             background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
@@ -106,182 +94,207 @@
             background-clip: text;
         }
         
-        .hero-content p {
+        .page-header p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #666;
-        }
-        
-        .btn-primary {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-        
-        .hero-image img {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .section-header {
-            text-align: center;
-            margin: 4rem 0 3rem;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .section-header p {
-            font-size: 1.1rem;
             color: #666;
             max-width: 600px;
             margin: 0 auto;
         }
         
-        .recipe-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .recipe-item {
-            background: rgba(255, 255, 255, 0.95);
+        .filter-section {
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
         
-        .recipe-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
         }
         
-        .recipe-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-        }
-        
-        .recipe-item h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-        
-        .recipe-item p {
-            color: #666;
-            margin-bottom: 1rem;
-        }
-        
-        .btn-secondary {
+        .filter-btn {
             padding: 0.7rem 1.5rem;
             background: linear-gradient(45deg, #ffeaa7, #fab1a0);
             color: #333;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        
-        .btn-secondary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-            justify-items: center;
-        }
-        
-        .video-item {
-            text-align: center;
-        }
-        
-        .video-item h3 {
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            color: #333;
-        }
-        
-        .video-item iframe {
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        #interactive-poll {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            padding: 3rem;
-            margin: 4rem 0;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-        
-        .poll-container {
-            max-width: 400px;
-            margin: 2rem auto;
-        }
-        
-        .poll-container label {
-            display: block;
-            margin-bottom: 1rem;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .poll-container select {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            background: white;
-        }
-        
-        .poll-container button {
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            color: white;
             border: none;
-            border-radius: 10px;
-            font-size: 1rem;
+            border-radius: 25px;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
         }
         
-        .poll-container button:hover {
+        .filter-btn:hover, .filter-btn.active {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .video-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 1rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .video-card p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .video-meta {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: #666;
+            align-items: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .video-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tag {
+            padding: 0.3rem 0.8rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .featured-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .featured-section h2 {
+            color: #ff6b6b;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+        
+        .featured-video {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .featured-content h3 {
+            color: #ff6b6b;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .featured-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .watch-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .watch-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subscribe-section {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .subscribe-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            background: white;
+        }
+        
+        .social-btn:hover {
+            transform: scale(1.1);
         }
         
         footer {
@@ -328,17 +341,25 @@
                 justify-content: center;
             }
             
-            .hero-container {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-video {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
             
-            .hero-content h2 {
-                font-size: 2rem;
+            main {
+                padding: 1rem;
             }
             
-            .video-grid {
-                grid-template-columns: 1fr;
+            .filter-section, .featured-section, .subscribe-section {
+                padding: 1.5rem;
             }
             
             .footer-content ul {
@@ -352,13 +373,55 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="https://via.placeholder.com/150x50/ff6b6b/ffffff?text=GagRecipe" alt="GagRecipe Logo" />
+                <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg" style="height: 50px;">
+                  <defs>
+                    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#ff6b6b"/>
+                      <stop offset="50%" style="stop-color:#4ecdc4"/>
+                      <stop offset="100%" style="stop-color:#45b7d1"/>
+                    </linearGradient>
+                  </defs>
+                  
+                  <!-- Chef hat -->
+                  <ellipse cx="20" cy="35" rx="15" ry="8" fill="#fff"/>
+                  <rect x="10" y="20" width="20" height="18" fill="#fff"/>
+                  <ellipse cx="20" cy="20" rx="10" ry="5" fill="#fff"/>
+                  
+                  <!-- Chef hat decoration -->
+                  <circle cx="15" cy="15" r="1.5" fill="#ff6b6b"/>
+                  <circle cx="20" cy="12" r="1.5" fill="#4ecdc4"/>
+                  <circle cx="25" cy="15" r="1.5" fill="#45b7d1"/>
+                  
+                  <!-- Cooking utensils -->
+                  <!-- Spoon -->
+                  <ellipse cx="32" cy="15" rx="2" ry="4" fill="#C0C0C0"/>
+                  <rect x="31" y="19" width="2" height="15" fill="#C0C0C0"/>
+                  
+                  <!-- Fork -->
+                  <rect x="36" y="12" width="0.5" height="5" fill="#C0C0C0"/>
+                  <rect x="37" y="12" width="0.5" height="5" fill="#C0C0C0"/>
+                  <rect x="38" y="12" width="0.5" height="5" fill="#C0C0C0"/>
+                  <rect x="35.5" y="17" width="3" height="17" fill="#C0C0C0"/>
+                  
+                  <!-- Text "GagRecipe" -->
+                  <text x="45" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="url(#logoGrad)">Gag</text>
+                  <text x="45" y="35" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="url(#logoGrad)">Recipe</text>
+                  
+                  <!-- Fun elements -->
+                  <circle cx="100" cy="15" r="2" fill="#ffeb3b"/>
+                  <circle cx="110" cy="25" r="1.5" fill="#ff6b6b"/>
+                  <circle cx="120" cy="35" r="2" fill="#4ecdc4"/>
+                  
+                  <!-- Smile -->
+                  <path d="M 105 40 Q 115 45 125 40" stroke="#ff6b6b" stroke-width="2" fill="none"/>
+                </svg>
             </div>
             <nav>
                 <ul>
+                    <li><a href="/">Home</a></li>
                     <li><a href="/recipes">Recipes</a></li>
-                    <li><a href="/videos">Videos</a></li>
-                    <li><a href="/community">Community</a></li>
+                    <li><a href="/videos" class="active">Videos</a></li>
+                    <li><a href="/about">About</a></li>
                     <li><a href="/contact">Contact</a></li>
                 </ul>
             </nav>
@@ -366,123 +429,249 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section id="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <h2>Turn Cooking into a Laughing Matter</h2>
-                    <p>Explore hilarious food ideas and creative recipes that will make you smile every time you cook!</p>
-                    <a href="/recipes" class="btn-primary">Explore Recipes</a>
-                </div>
-                <div class="hero-image">
-                    <img src="https://via.placeholder.com/500x300/4ecdc4/ffffff?text=Creative+Cooking" alt="Creative Cooking" />
-                </div>
-            </div>
-        </section>
+        <div class="page-header">
+            <h1>Hilarious Cooking Videos</h1>
+            <p>Watch, laugh, and learn with our collection of entertaining cooking videos that prove food can be fun!</p>
+        </div>
 
-        <!-- Featured Recipes -->
-        <section id="featured-recipes">
-            <div class="section-header">
-                <h2>Featured Gag Recipes</h2>
-                <p>Check out our top funny and creative recipes that will add humor to your kitchen.</p>
-            </div>
-            <div class="recipe-grid">
-                <div class="recipe-item">
-                    <img src="https://via.placeholder.com/300x200/ff6b6b/ffffff?text=Pizza+Party" alt="Recipe 1" />
-                    <h3>Funny Pizza Party</h3>
-                    <p>Make your pizza night hilarious with these out-of-the-box toppings!</p>
-                    <a href="/recipes/funny-pizza-party" class="btn-secondary">View Recipe</a>
+        <div class="featured-section">
+            <h2>🌟 Featured Video</h2>
+            <div class="featured-video">
+                <div class="video-container">
+                    <iframe src="https://www.tiktok.com/embed/7533999254294039826" width="100%" height="400" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border-radius: 15px;"></iframe>
                 </div>
-                <div class="recipe-item">
-                    <img src="https://via.placeholder.com/300x200/ffeaa7/333333?text=Wacky+Breakfast" alt="Recipe 2" />
-                    <h3>Wacky Breakfast</h3>
-                    <p>Start your morning with a laugh with these quirky breakfast ideas.</p>
-                    <a href="/recipes/wacky-breakfast" class="btn-secondary">View Recipe</a>
-                </div>
-                <div class="recipe-item">
-                    <img src="https://via.placeholder.com/300x200/fab1a0/ffffff?text=Creative+Cupcakes" alt="Recipe 3" />
-                    <h3>Creative Cupcakes</h3>
-                    <p>Have fun decorating cupcakes with these amusing themes!</p>
-                    <a href="/recipes/creative-cupcakes" class="btn-secondary">View Recipe</a>
-                </div>
-                <div class="recipe-item">
-                    <img src="https://via.placeholder.com/300x200/4ecdc4/ffffff?text=Spaghetti+Surprise" alt="Recipe 4" />
-                    <h3>Spaghetti Surprise</h3>
-                    <p>Surprise your guests with a spaghetti dish they'll never forget!</p>
-                    <a href="/recipes/spaghetti-surprise" class="btn-secondary">View Recipe</a>
-                </div>
-                <div class="recipe-item">
-                    <img src="https://via.placeholder.com/300x200/e17055/ffffff?text=Ice+Cream+Sundae" alt="Recipe 5" />
-                    <h3>Crazy Ice Cream Sundae</h3>
-                    <p>Make your ice cream even crazier with unexpected toppings.</p>
-                    <a href="/recipes/crazy-ice-cream-sundae" class="btn-secondary">View Recipe</a>
-                </div>
-                <div class="recipe-item">
-                    <img src="https://via.placeholder.com/300x200/fd79a8/ffffff?text=Banana+Split" alt="Recipe 6" />
-                    <h3>Banana Split Extravaganza</h3>
-                    <p>A banana split like you've never seen before!</p>
-                    <a href="/recipes/banana-split-extravaganza" class="btn-secondary">View Recipe</a>
-                </div>
-                <div class="recipe-item">
-                    <img src="https://via.placeholder.com/300x200/6c5ce7/ffffff?text=Gag+Cupcakes" alt="Recipe 7" />
-                    <h3>Gag Cupcakes</h3>
-                    <p>Turn your cupcakes into a laugh-out-loud dessert.</p>
-                    <a href="/recipes/gag-cupcakes" class="btn-secondary">View Recipe</a>
-                </div>
-                <div class="recipe-item">
-                    <img src="https://via.placeholder.com/300x200/00b894/ffffff?text=Fun+Sandwiches" alt="Recipe 8" />
-                    <h3>Fun Shaped Sandwiches</h3>
-                    <p>Sandwiches that will have everyone giggling with delight.</p>
-                    <a href="/recipes/fun-shaped-sandwiches" class="btn-secondary">View Recipe</a>
+                <div class="featured-content">
+                    <h3>The Great Pizza Face Experiment</h3>
+                    <p>Watch as we attempt to create the world's silliest pizza face using only kitchen ingredients. Spoiler alert: it doesn't go as planned, but the results are hilariously delicious!</p>
+                    <p>This video showcases our signature style of turning cooking disasters into comedy gold. You'll learn some actual cooking techniques while laughing at our creative food fails.</p>
+                    <a href="#" class="watch-btn">Watch Full Video 📺</a>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Video Preview -->
-        <section id="videos-preview">
-            <div class="section-header">
-                <h2>Watch Our Gag Recipe Videos</h2>
-                <p>Don't just read recipes – watch us cook and laugh with our fun cooking videos!</p>
+        <div class="filter-section">
+            <h3 style="text-align: center; margin-bottom: 1.5rem; color: #333;">Filter by Category</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Videos</button>
+                <button class="filter-btn" data-filter="tutorials">Tutorials</button>
+                <button class="filter-btn" data-filter="fails">Epic Fails</button>
+                <button class="filter-btn" data-filter="challenges">Challenges</button>
+                <button class="filter-btn" data-filter="reviews">Food Reviews</button>
+                <button class="filter-btn" data-filter="experiments">Experiments</button>
             </div>
-            <div class="video-grid">
-                <div class="video-item">
-                    <h3>Cooking with a Twist</h3>
-                    <iframe src="https://www.tiktok.com/embed/7533999254294039826" width="325" height="580" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-                <div class="video-item">
-                    <h3>Kitchen Mishaps</h3>
-                    <iframe src="https://www.tiktok.com/embed/7534019578620382486" width="325" height="580" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-                <div class="video-item">
-                    <h3>Recipe Fails & Fun</h3>
-                    <iframe src="https://www.tiktok.com/embed/7535861241739316511" width="325" height="580" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-            </div>
-        </section>
+        </div>
 
-        <!-- Interactive Poll Section -->
-        <section id="interactive-poll">
-            <div class="section-header">
-                <h2>What's Your Favorite Funny Recipe?</h2>
-                <p>Take our quick poll and let us know which type of funny recipe you love the most!</p>
-            </div>
-            <form action="/submit-poll" method="POST">
-                <div class="poll-container">
-                    <label for="favorite-recipe">Choose your favorite:</label>
-                    <select id="favorite-recipe" name="favorite-recipe">
-                        <option value="pizza">Funny Pizza Party</option>
-                        <option value="breakfast">Wacky Breakfast</option>
-                        <option value="cupcakes">Creative Cupcakes</option>
-                        <option value="spaghetti">Spaghetti Surprise</option>
-                        <option value="ice-cream">Crazy Ice Cream Sundae</option>
-                        <option value="banana-split">Banana Split Extravaganza</option>
-                        <option value="gag-cupcakes">Gag Cupcakes</option>
-                        <option value="sandwiches">Fun Shaped Sandwiches</option>
-                    </select>
-                    <button type="submit" class="btn-secondary">Submit</button>
+        <div class="videos-grid" id="videos-grid">
+            <div class="video-card" data-category="tutorials">
+                <div class="video-container">
+                    <iframe src="https://www.tiktok.com/embed/7534019578620382486" width="325" height="400" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
-            </form>
-        </section>
+                <h3>Cooking with a Twist</h3>
+                <div class="video-meta">
+                    <div class="meta-item">⏱️ 3:45</div>
+                    <div class="meta-item">👀 25K views</div>
+                    <div class="meta-item">❤️ 1.2K likes</div>
+                </div>
+                <p>Learn basic cooking techniques with a humorous twist! This tutorial shows you how to make everyday dishes more entertaining.</p>
+                <div class="video-tags">
+                    <span class="tag">Tutorial</span>
+                    <span class="tag">Beginner</span>
+                    <span class="tag">Comedy</span>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="fails">
+                <div class="video-container">
+                    <iframe src="https://www.tiktok.com/embed/7535861241739316511" width="325" height="400" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <h3>Kitchen Mishaps Compilation</h3>
+                <div class="video-meta">
+                    <div class="meta-item">⏱️ 5:12</div>
+                    <div class="meta-item">👀 45K views</div>
+                    <div class="meta-item">❤️ 3.1K likes</div>
+                </div>
+                <p>Sometimes the best content comes from our biggest mistakes! Watch our funniest kitchen fails and learn what NOT to do.</p>
+                <div class="video-tags">
+                    <span class="tag">Fails</span>
+                    <span class="tag">Comedy</span>
+                    <span class="tag">Bloopers</span>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="challenges">
+                <div class="video-container">
+                    <svg viewBox="0 0 325 400" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 400px; background: #ff6b6b; border-radius: 15px;">
+                        <rect width="325" height="400" fill="#ff6b6b"/>
+                        
+                        <!-- Play button -->
+                        <circle cx="162.5" cy="200" r="40" fill="rgba(255,255,255,0.9)"/>
+                        <polygon points="150,180 150,220 185,200" fill="#ff6b6b"/>
+                        
+                        <!-- Video elements -->
+                        <text x="162.5" y="100" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="white">5-Ingredient Challenge</text>
+                        
+                        <!-- Ingredient icons -->
+                        <circle cx="80" cy="300" r="25" fill="#ffeb3b"/>
+                        <rect x="130" y="275" width="30" height="50" fill="#8B4513"/>
+                        <ellipse cx="200" cy="300" rx="20" ry="30" fill="#fff"/>
+                        <circle cx="245" cy="300" r="20" fill="#e74c3c"/>
+                        
+                        <!-- Timer -->
+                        <circle cx="280" cy="50" r="20" fill="white"/>
+                        <text x="280" y="55" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">⏰</text>
+                    </svg>
+                </div>
+                <h3>5-Ingredient Cooking Challenge</h3>
+                <div class="video-meta">
+                    <div class="meta-item">⏱️ 8:30</div>
+                    <div class="meta-item">👀 32K views</div>
+                    <div class="meta-item">❤️ 2.5K likes</div>
+                </div>
+                <p>Can we create a full meal using only 5 random ingredients? Watch this hilarious challenge where creativity meets chaos!</p>
+                <div class="video-tags">
+                    <span class="tag">Challenge</span>
+                    <span class="tag">Creative</span>
+                    <span class="tag">Limited Ingredients</span>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="experiments">
+                <div class="video-container">
+                    <svg viewBox="0 0 325 400" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 400px; background: #4ecdc4; border-radius: 15px;">
+                        <rect width="325" height="400" fill="#4ecdc4"/>
+                        
+                        <!-- Play button -->
+                        <circle cx="162.5" cy="200" r="40" fill="rgba(255,255,255,0.9)"/>
+                        <polygon points="150,180 150,220 185,200" fill="#4ecdc4"/>
+                        
+                        <!-- Experiment elements -->
+                        <text x="162.5" y="80" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">Color-Changing Pancakes</text>
+                        
+                        <!-- Pancake stack -->
+                        <ellipse cx="162.5" cy="320" rx="40" ry="15" fill="#DEB887"/>
+                        <ellipse cx="162.5" cy="310" rx="35" ry="12" fill="#F4A460"/>
+                        <ellipse cx="162.5" cy="300" rx="30" ry="10" fill="#DEB887"/>
+                        
+                        <!-- Magic sparkles -->
+                        <g fill="#ffeb3b">
+                            <polygon points="100,150 102,155 107,155 103,158 105,163 100,160 95,163 97,158 93,155 98,155"/>
+                            <polygon points="230,130 232,135 237,135 233,138 235,143 230,140 225,143 227,138 223,135 228,135"/>
+                            <polygon points="120,250 122,255 127,255 123,258 125,263 120,260 115,263 117,258 113,255 118,255"/>
+                        </g>
+                    </svg>
+                </div>
+                <h3>Color-Changing Food Experiments</h3>
+                <div class="video-meta">
+                    <div class="meta-item">⏱️ 6:15</div>
+                    <div class="meta-item">👀 28K views</div>
+                    <div class="meta-item">❤️ 1.8K likes</div>
+                </div>
+                <p>We experiment with natural ingredients to create food that changes color before your eyes! Science meets deliciousness.</p>
+                <div class="video-tags">
+                    <span class="tag">Science</span>
+                    <span class="tag">Colorful</span>
+                    <span class="tag">Educational</span>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="reviews">
+                <div class="video-container">
+                    <svg viewBox="0 0 325 400" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 400px; background: #e17055; border-radius: 15px;">
+                        <rect width="325" height="400" fill="#e17055"/>
+                        
+                        <!-- Play button -->
+                        <circle cx="162.5" cy="200" r="40" fill="rgba(255,255,255,0.9)"/>
+                        <polygon points="150,180 150,220 185,200" fill="#e17055"/>
+                        
+                        <!-- Review elements -->
+                        <text x="162.5" y="70" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">Weird Food Trends Review</text>
+                        
+                        <!-- Food items -->
+                        <circle cx="100" cy="300" r="20" fill="#8B0000"/>
+                        <rect x="140" y="280" width="25" height="40" fill="#32CD32"/>
+                        <circle cx="200" cy="300" r="18" fill="#FFD700"/>
+                        <ellipse cx="250" cy="300" rx="15" ry="25" fill="#9400D3"/>
+                        
+                        <!-- Rating stars -->
+                        <g fill="#ffeb3b">
+                            <polygon points="80,350 82,355 87,355 83,358 85,363 80,360 75,363 77,358 73,355 78,355"/>
+                            <polygon points="120,350 122,355 127,355 123,358 125,363 120,360 115,363 117,358 113,355 118,355"/>
+                            <polygon points="160,350 162,355 167,355 163,358 165,363 160,360 155,363 157,358 153,355 158,355"/>
+                            <polygon points="200,350 202,355 207,355 203,358 205,363 200,360 195,363 197,358 193,355 198,355"/>
+                            <polygon points="240,350 242,355 247,355 243,358 245,363 240,360 235,363 237,358 233,355 238,355"/>
+                        </g>
+                    </svg>
+                </div>
+                <h3>Reviewing Weird Food Trends</h3>
+                <div class="video-meta">
+                    <div class="meta-item">⏱️ 7:20</div>
+                    <div class="meta-item">👀 38K views</div>
+                    <div class="meta-item">❤️ 2.9K likes</div>
+                </div>
+                <p>We try the latest viral food trends so you don't have to! Honest reviews with plenty of laughs and surprises.</p>
+                <div class="video-tags">
+                    <span class="tag">Reviews</span>
+                    <span class="tag">Viral Trends</span>
+                    <span class="tag">Honest</span>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="tutorials">
+                <div class="video-container">
+                    <svg viewBox="0 0 325 400" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 400px; background: #6c5ce7; border-radius: 15px;">
+                        <rect width="325" height="400" fill="#6c5ce7"/>
+                        
+                        <!-- Play button -->
+                        <circle cx="162.5" cy="200" r="40" fill="rgba(255,255,255,0.9)"/>
+                        <polygon points="150,180 150,220 185,200" fill="#6c5ce7"/>
+                        
+                        <!-- Tutorial elements -->
+                        <text x="162.5" y="70" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">Decorating Like a Pro</text>
+                        
+                        <!-- Cupcake -->
+                        <path d="M 140 320 L 185 320 L 182 350 L 143 350 Z" fill="#8B4513"/>
+                        <ellipse cx="162.5" cy="310" rx="25" ry="15" fill="#FFB6C1"/>
+                        <ellipse cx="162.5" cy="300" rx="20" ry="10" fill="#FF69B4"/>
+                        
+                        <!-- Decorating tools -->
+                        <rect x="50" y="280" width="20" height="60" fill="#C0C0C0"/>
+                        <ellipse cx="60" cy="275" rx="8" ry="5" fill="#FF1493"/>
+                        
+                        <rect x="250" y="280" width="20" height="60" fill="#C0C0C0"/>
+                        <ellipse cx="260" cy="275" rx="8" ry="5" fill="#32CD32"/>
+                        
+                        <!-- Sparkles -->
+                        <g fill="#ffeb3b">
+                            <polygon points="100,150 102,155 107,155 103,158 105,163 100,160 95,163 97,158 93,155 98,155"/>
+                            <polygon points="220,160 222,165 227,165 223,168 225,173 220,170 215,173 217,168 213,165 218,165"/>
+                        </g>
+                    </svg>
+                </div>
+                <h3>Food Decorating Hacks</h3>
+                <div class="video-meta">
+                    <div class="meta-item">⏱️ 4:55</div>
+                    <div class="meta-item">👀 42K views</div>
+                    <div class="meta-item">❤️ 3.5K likes</div>
+                </div>
+                <p>Learn professional food decorating techniques with everyday tools. Make your dishes Instagram-worthy with these simple tricks!</p>
+                <div class="video-tags">
+                    <span class="tag">Tutorial</span>
+                    <span class="tag">Decorating</span>
+                    <span class="tag">Pro Tips</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="subscribe-section">
+            <h2>🎬 Don't Miss Out!</h2>
+            <p>Subscribe to our channels for weekly doses of cooking comedy and culinary creativity. New videos every Tuesday and Friday!</p>
+            <div class="social-links">
+                <a href="#" class="social-btn" title="TikTok">📱</a>
+                <a href="#" class="social-btn" title="YouTube">📺</a>
+                <a href="#" class="social-btn" title="Instagram">📷</a>
+                <a href="#" class="social-btn" title="Facebook">👥</a>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -498,22 +687,72 @@
     </footer>
 
     <script>
-        // Simple form submission handler
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const selectedValue = document.getElementById('favorite-recipe').value;
-            alert('Thanks for voting for: ' + selectedValue);
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const videoCards = document.querySelectorAll('.video-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                videoCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.5s ease-in';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
         });
-        
-        // Add some interactive animations
-        document.querySelectorAll('.recipe-item').forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
+
+        // Add hover animations
+        videoCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
             });
             
-            item.addEventListener('mouseleave', function() {
+            card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0) scale(1)';
             });
+        });
+
+        // CSS animation for fade in
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Intersection Observer for video cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Animate video cards as they come into view
+        videoCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
         });
     </script>
 </body>
