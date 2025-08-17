@@ -8,8 +8,11 @@
     <title>GagRecipe | Fun & Creative Recipes</title>
     <link rel="icon" href="path_to_your_logo.png">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Plausible Analytics -->
     <script defer data-domain="gagrecipe.art" src="https://click.pageview.click/js/script.js"></script>
-    <!-- Google Tag -->
+    
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PXR7WHTCC"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -17,12 +20,339 @@
         gtag('js', new Date());
         gtag('config', 'G-6PXR7WHTCC');
     </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-top: 1rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+        
+        nav a:hover {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        #hero {
+            margin: 3rem 0;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin: 4rem 0 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .recipe-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .recipe-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .recipe-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .recipe-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .recipe-item p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-secondary {
+            padding: 0.7rem 1.5rem;
+            background: linear-gradient(45deg, #ffeaa7, #fab1a0);
+            color: #333;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            justify-items: center;
+        }
+        
+        .video-item {
+            text-align: center;
+        }
+        
+        .video-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        
+        .video-item iframe {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        #interactive-poll {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .poll-container {
+            max-width: 400px;
+            margin: 2rem auto;
+        }
+        
+        .poll-container label {
+            display: block;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .poll-container select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            background: white;
+        }
+        
+        .poll-container button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .poll-container button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            margin: 3rem 2rem 2rem;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .footer-content ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-content a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-content a:hover {
+            color: #ff6b6b;
+        }
+        
+        footer p {
+            color: #999;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content ul {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="path_to_your_logo.png" alt="GagRecipe Logo" />
+                <img src="https://via.placeholder.com/150x50/ff6b6b/ffffff?text=GagRecipe" alt="GagRecipe Logo" />
             </div>
             <nav>
                 <ul>
@@ -45,7 +375,7 @@
                     <a href="/recipes" class="btn-primary">Explore Recipes</a>
                 </div>
                 <div class="hero-image">
-                    <img src="hero-image.jpg" alt="Creative Cooking" />
+                    <img src="https://via.placeholder.com/500x300/4ecdc4/ffffff?text=Creative+Cooking" alt="Creative Cooking" />
                 </div>
             </div>
         </section>
@@ -58,49 +388,49 @@
             </div>
             <div class="recipe-grid">
                 <div class="recipe-item">
-                    <img src="recipe1.jpg" alt="Recipe 1" />
+                    <img src="https://via.placeholder.com/300x200/ff6b6b/ffffff?text=Pizza+Party" alt="Recipe 1" />
                     <h3>Funny Pizza Party</h3>
                     <p>Make your pizza night hilarious with these out-of-the-box toppings!</p>
                     <a href="/recipes/funny-pizza-party" class="btn-secondary">View Recipe</a>
                 </div>
                 <div class="recipe-item">
-                    <img src="recipe2.jpg" alt="Recipe 2" />
+                    <img src="https://via.placeholder.com/300x200/ffeaa7/333333?text=Wacky+Breakfast" alt="Recipe 2" />
                     <h3>Wacky Breakfast</h3>
                     <p>Start your morning with a laugh with these quirky breakfast ideas.</p>
                     <a href="/recipes/wacky-breakfast" class="btn-secondary">View Recipe</a>
                 </div>
                 <div class="recipe-item">
-                    <img src="recipe3.jpg" alt="Recipe 3" />
+                    <img src="https://via.placeholder.com/300x200/fab1a0/ffffff?text=Creative+Cupcakes" alt="Recipe 3" />
                     <h3>Creative Cupcakes</h3>
                     <p>Have fun decorating cupcakes with these amusing themes!</p>
                     <a href="/recipes/creative-cupcakes" class="btn-secondary">View Recipe</a>
                 </div>
                 <div class="recipe-item">
-                    <img src="recipe4.jpg" alt="Recipe 4" />
+                    <img src="https://via.placeholder.com/300x200/4ecdc4/ffffff?text=Spaghetti+Surprise" alt="Recipe 4" />
                     <h3>Spaghetti Surprise</h3>
                     <p>Surprise your guests with a spaghetti dish they'll never forget!</p>
                     <a href="/recipes/spaghetti-surprise" class="btn-secondary">View Recipe</a>
                 </div>
                 <div class="recipe-item">
-                    <img src="recipe5.jpg" alt="Recipe 5" />
+                    <img src="https://via.placeholder.com/300x200/e17055/ffffff?text=Ice+Cream+Sundae" alt="Recipe 5" />
                     <h3>Crazy Ice Cream Sundae</h3>
                     <p>Make your ice cream even crazier with unexpected toppings.</p>
                     <a href="/recipes/crazy-ice-cream-sundae" class="btn-secondary">View Recipe</a>
                 </div>
                 <div class="recipe-item">
-                    <img src="recipe6.jpg" alt="Recipe 6" />
+                    <img src="https://via.placeholder.com/300x200/fd79a8/ffffff?text=Banana+Split" alt="Recipe 6" />
                     <h3>Banana Split Extravaganza</h3>
                     <p>A banana split like you've never seen before!</p>
                     <a href="/recipes/banana-split-extravaganza" class="btn-secondary">View Recipe</a>
                 </div>
                 <div class="recipe-item">
-                    <img src="recipe7.jpg" alt="Recipe 7" />
+                    <img src="https://via.placeholder.com/300x200/6c5ce7/ffffff?text=Gag+Cupcakes" alt="Recipe 7" />
                     <h3>Gag Cupcakes</h3>
                     <p>Turn your cupcakes into a laugh-out-loud dessert.</p>
                     <a href="/recipes/gag-cupcakes" class="btn-secondary">View Recipe</a>
                 </div>
                 <div class="recipe-item">
-                    <img src="recipe8.jpg" alt="Recipe 8" />
+                    <img src="https://via.placeholder.com/300x200/00b894/ffffff?text=Fun+Sandwiches" alt="Recipe 8" />
                     <h3>Fun Shaped Sandwiches</h3>
                     <p>Sandwiches that will have everyone giggling with delight.</p>
                     <a href="/recipes/fun-shaped-sandwiches" class="btn-secondary">View Recipe</a>
@@ -167,6 +497,24 @@
         <p>&copy; 2025 GagRecipe. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Simple form submission handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const selectedValue = document.getElementById('favorite-recipe').value;
+            alert('Thanks for voting for: ' + selectedValue);
+        });
+        
+        // Add some interactive animations
+        document.querySelectorAll('.recipe-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
 </body>
 </html>
