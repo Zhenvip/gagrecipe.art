@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact GagRecipe - Get in touch with us for questions, suggestions, or collaboration opportunities.">
+    <meta name="keywords" content="contact, support, GagRecipe, cooking, recipes">
+    <title>Contact Us | GagRecipe</title>
+    <link rel="icon" href="path_to_your_logo.png">
+    
+    <!-- Plausible Analytics -->
+    <script defer data-domain="gagrecipe.art" src="https://click.pageview.click/js/script.js"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PXR7WHTCC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6PXR7WHTCC');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-top: 1rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+        
+        nav a:hover, nav a.active {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+        
+        .contact-form {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form h2, .contact-info h2 {
+            color: #ff6b6b;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background: white;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff6b6b;
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-method:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h3 {
+            color: #333;
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-details p {
+            color: #666;
+            margin: 0;
+        }
+        
+        .contact-details a {
+            color: #ff6b6b;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-details a:hover {
+            color: #4ecdc4;
+        }
+        
+        .faq-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-section h2 {
+            color: #ff6b6b;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background: #f8f9fa;
+            padding: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+        
+        .faq-answer {
+            padding: 1rem;
+            background: white;
+            display: none;
+            border-top: 1px solid #eee;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        .faq-toggle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #ff6b6b;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        .social-links {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .social-links h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .social-btn.tiktok { background: #000; }
+        .social-btn.instagram { background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); }
+        .social-btn.youtube { background: #ff0000; }
+        .social-btn.facebook { background: #1877f2; }
+        
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            margin: 3rem 2rem 2rem;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .footer-content ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-content a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-content a:hover {
+            color: #ff6b6b;
+        }
+        
+        footer p {
+            color: #999;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            main {
+                padding: 1rem;
+            }
+            
+            .contact-form, .contact-info, .faq-section {
+                padding: 1.5rem;
+            }
+            
+            .footer-content ul {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <svg viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg" style="height: 50px;">
+                  <defs>
+                    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#ff6b6b"/>
+                      <stop offset="50%" style="stop-color:#4ecdc4"/>
+                      <stop offset="100%" style="stop-color:#45b7d1"/>
+                    </linearGradient>
+                  </defs>
+                  
+                  <!-- Chef hat -->
+                  <ellipse cx="20" cy="35" rx="15" ry="8" fill="#fff"/>
+                  <rect x="10" y="20" width="20" height="18" fill="#fff"/>
+                  <ellipse cx="20" cy="20" rx="10" ry="5" fill="#fff"/>
+                  
+                  <!-- Chef hat decoration -->
+                  <circle cx="15" cy="15" r="1.5" fill="#ff6b6b"/>
+                  <circle cx="20" cy="12" r="1.5" fill="#4ecdc4"/>
+                  <circle cx="25" cy="15" r="1.5" fill="#45b7d1"/>
+                  
+                  <!-- Cooking utensils -->
+                  <!-- Spoon -->
+                  <ellipse cx="32" cy="15" rx="2" ry="4" fill="#C0C0C0"/>
+                  <rect x="31" y="19" width="2" height="15" fill="#C0C0C0"/>
+                  
+                  <!-- Fork -->
+                  <rect x="36" y="12" width="0.5" height="5" fill="#C0C0C0"/>
+                  <rect x="37" y="12" width="0.5" height="5" fill="#C0C0C0"/>
+                  <rect x="38" y="12" width="0.5" height="5" fill="#C0C0C0"/>
+                  <rect x="35.5" y="17" width="3" height="17" fill="#C0C0C0"/>
+                  
+                  <!-- Text "GagRecipe" -->
+                  <text x="45" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="url(#logoGrad)">Gag</text>
+                  <text x="45" y="35" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="url(#logoGrad)">Recipe</text>
+                  
+                  <!-- Fun elements -->
+                  <circle cx="100" cy="15" r="2" fill="#ffeb3b"/>
+                  <circle cx="110" cy="25" r="1.5" fill="#ff6b6b"/>
+                  <circle cx="120" cy="35" r="2" fill="#4ecdc4"/>
+                  
+                  <!-- Smile -->
+                  <path d="M 105 40 Q 115 45 125 40" stroke="#ff6b6b" stroke-width="2" fill="none"/>
+                </svg>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/recipes">Recipes</a></li>
+                    <li><a href="/videos">Videos</a></li>
+                    <li><a href="/community">Community</a></li>
+                    <li><a href="/contact" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Get in Touch!</h1>
+            <p>We'd love to hear from you! Whether you have questions, suggestions, or just want to share your cooking adventures.</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-form">
+                <h2>📝 Send us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a topic...</option>
+                            <option value="recipe-question">Recipe Question</option>
+                            <option value="recipe-suggestion">Recipe Suggestion</option>
+                            <option value="technical-issue">Technical Issue</option>
+                            <option value="collaboration">Collaboration</option>
+                            <option value="feedback">General Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message 🚀</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <h2>💬 Other Ways to Reach Us</h2>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-details">
+                        <h3>Email Us</h3>
+                        <p><a href="mailto:hello@gagrecipe.art">hello@gagrecipe.art</a></p>
+                        <p>We usually respond within 24 hours!</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">🛠️</div>
+                    <div class="contact-details">
+                        <h3>Technical Support</h3>
+                        <p><a href="mailto:support@gagrecipe.art">support@gagrecipe.art</a></p>
+                        <p>For website issues and bugs</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">🤝</div>
+                    <div class="contact-details">
+                        <h3>Partnerships</h3>
+                        <p><a href="mailto:partnerships@gagrecipe.art">partnerships@gagrecipe.art</a></p>
+                        <p>Collaboration and business inquiries</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">🔒</div>
+                    <div class="contact-details">
+                        <h3>Privacy Concerns</h3>
+                        <p><a href="mailto:privacy@gagrecipe.art">privacy@gagrecipe.art</a></p>
+                        <p>Data protection and privacy questions</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <h3>Follow Us on Social Media</h3>
+                    <div class="social-buttons">
+                        <a href="#" class="social-btn tiktok" title="TikTok">📱</a>
+                        <a href="#" class="social-btn instagram" title="Instagram">📷</a>
+                        <a href="#" class="social-btn youtube" title="YouTube">📺</a>
+                        <a href="#" class="social-btn facebook" title="Facebook">👥</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>❓ Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I submit my own funny recipe?</span>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! We love featuring community recipes. Send us your funny and creative recipes via email or through our contact form. Include photos if you have them, and we might feature your recipe on our website!</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Are your recipes safe to cook?</span>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! While our recipes are designed to be fun and silly, they're all safe and edible. We test our recipes and follow proper food safety guidelines. However, always check for allergens and follow basic kitchen safety practices.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I use your recipes commercially?</span>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Our recipes are free for personal use. For commercial use, such as in restaurants or food businesses, please contact us for permission. We're usually happy to work something out!</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you offer cooking classes or workshops?</span>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Currently, we focus on online content, but we're always exploring new ways to share the fun of cooking. Follow us on social media for announcements about any upcoming events or workshops!</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How often do you add new recipes?</span>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>We try to add new recipes weekly! Subscribe to our newsletter or follow us on social media to stay updated with our latest funny and creative cooking ideas.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I request a specific type of recipe?</span>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Definitely! We love recipe requests. Whether you're looking for a funny birthday cake, silly appetizers for a party, or creative lunch ideas for kids, just let us know what you're looking for!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <ul>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/terms">Terms & Conditions</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2025 GagRecipe. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email || !data.subject || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending... 📤';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Thank you for your message! We\'ll get back to you soon. 😊');
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                const toggle = this.querySelector('.faq-toggle');
+                
+                // Close other open FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-answer').classList.remove('active');
+                        item.querySelector('.faq-toggle').textContent = '+';
+                    }
+                });
+                
+                // Toggle current FAQ
+                faqItem.classList.toggle('active');
+                answer.classList.toggle('active');
+                toggle.textContent = faqItem.classList.contains('active') ? '×' : '+';
+            });
+        });
+
+        // Add some interactive animations
+        document.querySelectorAll('.contact-method').forEach(method => {
+            method.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(10px)';
+            });
+            
+            method.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>
