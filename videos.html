@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GAG Recipes Video Collection - Watch cooking tutorials, epic fails, challenges, and experiments for Grow a Garden cooking recipes.">
+    <meta name="keywords" content="GAG recipes videos, cooking tutorials, epic fails, challenges, food experiments, Grow a Garden">
+    <title>Videos | GAG Recipes</title>
+    <link rel="icon" href="logo.svg">
+    
+    <!-- Plausible Analytics -->
+    <script defer data-domain="gagrecipe.art" src="https://click.pageview.click/js/script.js"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PXR7WHTCC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6PXR7WHTCC');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            margin-top: 1.5rem;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+        
+        .header-container:hover::before {
+            left: 100%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+        
+        .logo::after {
+            content: '🌱';
+            font-size: 2rem;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            position: relative;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        nav a:hover::before,
+        nav a.active::before {
+            left: 0;
+        }
+        
+        nav a:hover, nav a.active {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .language-selector {
+            display: flex;
+            gap: 0.5rem;
+            position: relative;
+        }
+        
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 20px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .lang-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        .lang-btn:hover::before,
+        .lang-btn.active::before {
+            left: 0;
+        }
+        
+        .lang-btn:hover,
+        .lang-btn.active {
+            color: white;
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin: 4rem 0;
+            padding: 4rem 3rem;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 30px;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+            animation: rotate 20s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #667eea, #764ba2, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .page-header p {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            line-height: 1.8;
+        }
+        
+        .filter-section {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 25px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .filter-title {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+        
+        .filter-btn:hover::before {
+            left: 100%;
+        }
+        
+        .filter-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .filter-btn.active {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+        }
+        
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .video-card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        
+        .video-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+            z-index: 1;
+        }
+        
+        .video-card:hover::before {
+            left: 100%;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.3);
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .video-thumbnail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+        
+        .play-button {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #667eea;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .play-button:hover {
+            transform: scale(1.1);
+            background: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .video-duration {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .video-content {
+            padding: 1.5rem;
+        }
+        
+        .video-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+            line-height: 1.4;
+        }
+        
+        .video-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .video-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .video-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .video-tag {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .featured-video {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 25px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured-video::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #ff6b6b);
+            border-radius: 25px 25px 0 0;
+        }
+        
+        .featured-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .featured-star {
+            color: #ffd700;
+            font-size: 2.5rem;
+        }
+        
+        .featured-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .featured-player {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured-player::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+        }
+        
+        .featured-play-btn {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #667eea;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0 auto 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .featured-play-btn:hover {
+            transform: scale(1.1);
+            background: white;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .featured-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .featured-info p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .watch-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+        }
+        
+        .watch-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.4);
+        }
+        
+        footer {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            margin: 4rem 2rem 2rem;
+            border-radius: 25px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #ff6b6b);
+            border-radius: 25px 25px 0 0;
+        }
+        
+        .footer-content ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-content a {
+            color: #666;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .footer-content a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-content a:hover::after {
+            width: 100%;
+        }
+        
+        .footer-content a:hover {
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        footer p {
+            color: #999;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .featured-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-content ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">GAG Recipes</div>
+            <nav>
+                <ul>
+                    <li><a href="/">All Recipes</a></li>
+                    <li><a href="/rarity-guide">Rarity Guide</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li><a href="/videos" class="active">Videos</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/legal">Legal</a></li>
+                </ul>
+            </nav>
+            <div class="language-selector">
+                <button class="lang-btn active">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Video Collection</h1>
+            <p>Watch our latest cooking tutorials, epic fails, challenges, and experiments for Grow a Garden recipes</p>
+        </div>
+
+        <div class="featured-video">
+            <div class="featured-header">
+                <span class="featured-star">⭐</span>
+                Featured Video
+            </div>
+            <div class="featured-content">
+                <div class="featured-player">
+                    <div class="featured-play-btn">▶️</div>
+                    <h3>GARDEN RECIPE</h3>
+                    <p>High Quality Video - No Compression</p>
+                </div>
+                <div class="featured-info">
+                    <h3>The Great Pizza Face Experiment</h3>
+                    <p>Watch as we attempt to create the world's silliest pizza face using only kitchen ingredients. Spoiler alert: it doesn't go as planned, but the results are hilariously delicious!</p>
+                    <p>This video showcases our signature style of turning cooking disasters into comedy gold. You'll learn some actual cooking techniques while laughing at our creative food fails.</p>
+                    <a href="#" class="watch-btn">▶️ Watch Full Video</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <div class="filter-title">Filter by Category</div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All Videos</button>
+                <button class="filter-btn" data-category="tutorials">Tutorials</button>
+                <button class="filter-btn" data-category="fails">Epic Fails</button>
+                <button class="filter-btn" data-category="challenges">Challenges</button>
+                <button class="filter-btn" data-category="reviews">Food Reviews</button>
+                <button class="filter-btn" data-category="experiments">Experiments</button>
+            </div>
+        </div>
+
+        <div class="videos-grid">
+            <!-- Tutorial Videos -->
+            <div class="video-card" data-category="tutorials">
+                <div class="video-thumbnail">
+                    <div class="play-button">▶️</div>
+                    <div class="video-duration">3:45</div>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Cooking with a Twist</h3>
+                    <div class="video-stats">
+                        <span>25K views</span>
+                        <span>1.2K likes</span>
+                    </div>
+                    <p class="video-description">Learn basic cooking techniques with a humorous twist! This tutorial shows you how to make everyday dishes more entertaining.</p>
+                    <div class="video-tags">
+                        <span class="video-tag">Tutorial</span>
+                        <span class="video-tag">Beginner</span>
+                        <span class="video-tag">Comedy</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="fails">
+                <div class="video-thumbnail">
+                    <div class="play-button">▶️</div>
+                    <div class="video-duration">5:12</div>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Kitchen Mishaps Compilation</h3>
+                    <div class="video-stats">
+                        <span>45K views</span>
+                        <span>3.1K likes</span>
+                    </div>
+                    <p class="video-description">Sometimes the best content comes from our biggest mistakes! Watch our funniest kitchen fails and learn what NOT to do.</p>
+                    <div class="video-tags">
+                        <span class="video-tag">Fails</span>
+                        <span class="video-tag">Comedy</span>
+                        <span class="video-tag">Bloopers</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="challenges">
+                <div class="video-thumbnail">
+                    <div class="play-button">▶️</div>
+                    <div class="video-duration">8:30</div>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">5-Ingredient Cooking Challenge</h3>
+                    <div class="video-stats">
+                        <span>32K views</span>
+                        <span>2.5K likes</span>
+                    </div>
+                    <p class="video-description">Can we create a full meal using only 5 random ingredients? Watch this hilarious challenge where creativity meets chaos!</p>
+                    <div class="video-tags">
+                        <span class="video-tag">Challenge</span>
+                        <span class="video-tag">Creative</span>
+                        <span class="video-tag">Limited Ingredients</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="experiments">
+                <div class="video-thumbnail">
+                    <div class="play-button">▶️</div>
+                    <div class="video-duration">6:15</div>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Color-Changing Pancakes</h3>
+                    <div class="video-stats">
+                        <span>18K views</span>
+                        <span>1.8K likes</span>
+                    </div>
+                    <p class="video-description">We experiment with natural food coloring to create pancakes that change color as you cook them. The results are magical!</p>
+                    <div class="video-tags">
+                        <span class="video-tag">Experiment</span>
+                        <span class="video-tag">Science</span>
+                        <span class="video-tag">Fun</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="reviews">
+                <div class="video-thumbnail">
+                    <div class="play-button">▶️</div>
+                    <div class="video-duration">4:22</div>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Weird Food Trends Review</h3>
+                    <div class="video-stats">
+                        <span>28K views</span>
+                        <span>2.2K likes</span>
+                    </div>
+                    <p class="video-description">We try the latest viral food trends and give our honest opinions. Some are surprisingly good, others are... interesting.</p>
+                    <div class="video-tags">
+                        <span class="video-tag">Review</span>
+                        <span class="video-tag">Trends</span>
+                        <span class="video-tag">Viral</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="tutorials">
+                <div class="video-thumbnail">
+                    <div class="play-button">▶️</div>
+                    <div class="video-duration">7:45</div>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Decorating Like a Pro</h3>
+                    <div class="video-stats">
+                        <span>15K views</span>
+                        <span>1.5K likes</span>
+                    </div>
+                    <p class="video-description">Learn professional cake decorating techniques that will make your desserts look like they came from a bakery!</p>
+                    <div class="video-tags">
+                        <span class="video-tag">Tutorial</span>
+                        <span class="video-tag">Decorating</span>
+                        <span class="video-tag">Advanced</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Videos -->
+            <div class="video-card" data-category="challenges">
+                <div class="video-thumbnail">
+                    <div class="play-button">▶️</div>
+                    <div class="video-duration">10:30</div>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Blindfolded Cooking Challenge</h3>
+                    <div class="video-stats">
+                        <span>22K views</span>
+                        <span>1.9K likes</span>
+                    </div>
+                    <p class="video-description">Can we cook a complete meal while blindfolded? This challenge tests our cooking skills and sense of humor!</p>
+                    <div class="video-tags">
+                        <span class="video-tag">Challenge</span>
+                        <span class="video-tag">Blindfolded</span>
+                        <span class="video-tag">Funny</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="experiments">
+                <div class="video-thumbnail">
+                    <div class="play-button">▶️</div>
+                    <div class="video-duration">5:55</div>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Microwave vs Stovetop</h3>
+                    <div class="video-stats">
+                        <span>19K views</span>
+                        <span>1.6K likes</span>
+                    </div>
+                    <p class="video-description">We compare cooking the same dish using microwave and stovetop methods. The results might surprise you!</p>
+                    <div class="video-tags">
+                        <span class="video-tag">Experiment</span>
+                        <span class="video-tag">Comparison</span>
+                        <span class="video-tag">Tips</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="fails">
+                <div class="video-thumbnail">
+                    <div class="play-button">▶️</div>
+                    <div class="video-duration">3:20</div>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Cake Decorating Gone Wrong</h3>
+                    <div class="video-stats">
+                        <span>31K views</span>
+                        <span>2.8K likes</span>
+                    </div>
+                    <p class="video-description">Our attempt at creating a masterpiece cake turns into a hilarious disaster. Sometimes the best plans go awry!</p>
+                    <div class="video-tags">
+                        <span class="video-tag">Fails</span>
+                        <span class="video-tag">Cake</span>
+                        <span class="video-tag">Funny</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="reviews">
+                <div class="video-thumbnail">
+                    <div class="play-button">▶️</div>
+                    <div class="video-duration">6:45</div>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Grocery Store vs Homemade</h3>
+                    <div class="video-stats">
+                        <span>24K views</span>
+                        <span>2.1K likes</span>
+                    </div>
+                    <p class="video-description">We compare store-bought vs homemade versions of popular foods. Is it worth the extra effort?</p>
+                    <div class="video-tags">
+                        <span class="video-tag">Review</span>
+                        <span class="video-tag">Comparison</span>
+                        <span class="video-tag">Homemade</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="tutorials">
+                <div class="video-thumbnail">
+                    <div class="play-button">▶️</div>
+                    <div class="video-duration">9:15</div>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Quick Breakfast Hacks</h3>
+                    <div class="video-stats">
+                        <span>27K views</span>
+                        <span>2.3K likes</span>
+                    </div>
+                    <p class="video-description">Learn 10 amazing breakfast hacks that will save you time and make your mornings more delicious!</p>
+                    <div class="video-tags">
+                        <span class="video-tag">Tutorial</span>
+                        <span class="video-tag">Hacks</span>
+                        <span class="video-tag">Breakfast</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="experiments">
+                <div class="video-thumbnail">
+                    <div class="play-button">▶️</div>
+                    <div class="video-duration">4:50</div>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Ice Cream Without a Machine</h3>
+                    <div class="video-stats">
+                        <span>16K views</span>
+                        <span>1.4K likes</span>
+                    </div>
+                    <p class="video-description">We experiment with different methods to make ice cream without an ice cream machine. The results are surprisingly good!</p>
+                    <div class="video-tags">
+                        <span class="video-tag">Experiment</span>
+                        <span class="video-tag">Ice Cream</span>
+                        <span class="video-tag">No Machine</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/rarity-guide">Rarity Guide</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/videos">Videos</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/legal">Legal</a></li>
+            </ul>
+            <p>&copy; 2024 GAG Recipes. All rights reserved. Not affiliated with Roblox Corporation.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const videoCards = document.querySelectorAll('.video-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const category = button.getAttribute('data-category');
+
+                videoCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.5s ease-in';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Add fadeIn animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Play button functionality
+        const playButtons = document.querySelectorAll('.play-button, .featured-play-btn');
+        playButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Add your video player logic here
+                alert('Video player would open here! 🎥');
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe video cards for animation
+        videoCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
