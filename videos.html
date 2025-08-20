@@ -728,7 +728,7 @@
                     <h3>The Great Pizza Face Experiment</h3>
                     <p>Watch as we attempt to create the world's silliest pizza face using only kitchen ingredients. Spoiler alert: it doesn't go as planned, but the results are hilariously delicious!</p>
                     <p>This video showcases our signature style of turning cooking disasters into comedy gold. You'll learn some actual cooking techniques while laughing at our creative food fails.</p>
-                    <a href="#" class="watch-btn">▶️ Watch Full Video</a>
+                    <a href="/video-player.html?v=pizza-face-experiment" class="watch-btn">▶️ Watch Full Video</a>
                 </div>
             </div>
         </div>
@@ -1043,8 +1043,36 @@
         const playButtons = document.querySelectorAll('.play-button, .featured-play-btn');
         playButtons.forEach(button => {
             button.addEventListener('click', () => {
-                // Add your video player logic here
-                alert('Video player would open here! 🎥');
+                // Get the video card that contains this button
+                const videoCard = button.closest('.video-card');
+                if (videoCard) {
+                    // Get video title to determine which video to play
+                    const videoTitle = videoCard.querySelector('.video-title').textContent;
+                    let videoId = 'pizza-face-experiment'; // default
+                    
+                    // Map video titles to video IDs
+                    const videoMap = {
+                        'Cooking with a Twist': 'cooking-twist',
+                        'Kitchen Mishaps Compilation': 'kitchen-mishaps',
+                        '5-Ingredient Cooking Challenge': 'cooking-challenge',
+                        'Color-Changing Pancakes': 'color-pancakes',
+                        'Weird Food Trends Review': 'food-trends',
+                        'Decorating Like a Pro': 'decorating-pro',
+                        'Blindfolded Cooking Challenge': 'blindfolded-challenge',
+                        'Microwave vs Stovetop': 'microwave-vs-stovetop',
+                        'Cake Decorating Gone Wrong': 'cake-decorating-fail',
+                        'Grocery Store vs Homemade': 'grocery-vs-homemade',
+                        'Quick Breakfast Hacks': 'breakfast-hacks',
+                        'Ice Cream Without a Machine': 'ice-cream-no-machine'
+                    };
+                    
+                    if (videoMap[videoTitle]) {
+                        videoId = videoMap[videoTitle];
+                    }
+                    
+                    // Navigate to video player page
+                    window.location.href = `/video-player.html?v=${videoId}`;
+                }
             });
         });
 

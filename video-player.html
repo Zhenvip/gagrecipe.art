@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player | GAG Recipes</title>
+    <link rel="icon" href="logo.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 1rem 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .back-btn {
+            padding: 0.5rem 1rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .video-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .video-player {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        .video-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+            text-align: center;
+        }
+        
+        .video-frame {
+            width: 100%;
+            height: 450px;
+            border: none;
+            border-radius: 15px;
+            background: #000;
+            margin-bottom: 1rem;
+        }
+        
+        .video-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .video-stats {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .video-tags {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .video-tag {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .video-frame {
+                height: 250px;
+            }
+            
+            .video-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">GAG Recipes</div>
+            <a href="/videos" class="back-btn">← Back to Videos</a>
+        </div>
+    </header>
+    
+    <div class="video-container">
+        <div class="video-player">
+            <h1 class="video-title" id="videoTitle">Loading...</h1>
+            <div class="video-frame" id="videoFrame">
+                <div style="display: flex; justify-content: center; align-items: center; height: 100%; color: white; font-size: 1.2rem;">
+                    Loading video...
+                </div>
+            </div>
+            <p class="video-description" id="videoDescription">Loading description...</p>
+            <div class="video-stats">
+                <span id="videoViews">Loading...</span>
+                <span id="videoLikes">Loading...</span>
+                <span id="videoDuration">Loading...</span>
+            </div>
+            <div class="video-tags" id="videoTags">
+                <!-- Tags will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Video data - in a real application, this would come from a database
+        const videos = {
+            'cooking-twist': {
+                title: 'Cooking with a Twist',
+                description: 'Learn basic cooking techniques with a humorous twist! This tutorial shows you how to make everyday dishes more entertaining.',
+                views: '25K views',
+                likes: '1.2K likes',
+                duration: '3:45',
+                tags: ['Tutorial', 'Beginner', 'Comedy'],
+                videoId: 'dQw4w9WgXcQ' // Example YouTube video ID
+            },
+            'kitchen-mishaps': {
+                title: 'Kitchen Mishaps Compilation',
+                description: 'Sometimes the best content comes from our biggest mistakes! Watch our funniest kitchen fails and learn what NOT to do.',
+                views: '45K views',
+                likes: '3.1K likes',
+                duration: '5:12',
+                tags: ['Fails', 'Comedy', 'Bloopers'],
+                videoId: 'dQw4w9WgXcQ'
+            },
+            'cooking-challenge': {
+                title: '5-Ingredient Cooking Challenge',
+                description: 'Can we create a full meal using only 5 random ingredients? Watch this hilarious challenge where creativity meets chaos!',
+                views: '32K views',
+                likes: '2.5K likes',
+                duration: '8:30',
+                tags: ['Challenge', 'Creative', 'Limited Ingredients'],
+                videoId: 'dQw4w9WgXcQ'
+            },
+            'color-pancakes': {
+                title: 'Color-Changing Pancakes',
+                description: 'We experiment with natural food coloring to create pancakes that change color as you cook them. The results are magical!',
+                views: '18K views',
+                likes: '1.8K likes',
+                duration: '6:15',
+                tags: ['Experiment', 'Science', 'Fun'],
+                videoId: 'dQw4w9WgXcQ'
+            },
+            'food-trends': {
+                title: 'Weird Food Trends Review',
+                description: 'We try the latest viral food trends and give our honest opinions. Some are surprisingly good, others are... interesting.',
+                views: '28K views',
+                likes: '2.2K likes',
+                duration: '4:22',
+                tags: ['Review', 'Trends', 'Viral'],
+                videoId: 'dQw4w9WgXcQ'
+            },
+            'decorating-pro': {
+                title: 'Decorating Like a Pro',
+                description: 'Learn professional cake decorating techniques that will make your desserts look like they came from a bakery!',
+                views: '15K views',
+                likes: '1.5K likes',
+                duration: '7:45',
+                tags: ['Tutorial', 'Decorating', 'Advanced'],
+                videoId: 'dQw4w9WgXcQ'
+            },
+            'blindfolded-challenge': {
+                title: 'Blindfolded Cooking Challenge',
+                description: 'Can we cook a complete meal while blindfolded? This challenge tests our cooking skills and sense of humor!',
+                views: '22K views',
+                likes: '1.9K likes',
+                duration: '10:30',
+                tags: ['Challenge', 'Blindfolded', 'Funny'],
+                videoId: 'dQw4w9WgXcQ'
+            },
+            'microwave-vs-stovetop': {
+                title: 'Microwave vs Stovetop',
+                description: 'We compare cooking the same dish using microwave and stovetop methods. The results might surprise you!',
+                views: '19K views',
+                likes: '1.6K likes',
+                duration: '5:55',
+                tags: ['Experiment', 'Comparison', 'Tips'],
+                videoId: 'dQw4w9WgXcQ'
+            },
+            'cake-decorating-fail': {
+                title: 'Cake Decorating Gone Wrong',
+                description: 'Our attempt at creating a masterpiece cake turns into a hilarious disaster. Sometimes the best plans go awry!',
+                views: '31K views',
+                likes: '2.8K likes',
+                duration: '3:20',
+                tags: ['Fails', 'Cake', 'Funny'],
+                videoId: 'dQw4w9WgXcQ'
+            },
+            'grocery-vs-homemade': {
+                title: 'Grocery Store vs Homemade',
+                description: 'We compare store-bought vs homemade versions of popular foods. Is it worth the extra effort?',
+                views: '24K views',
+                likes: '2.1K likes',
+                duration: '6:45',
+                tags: ['Review', 'Comparison', 'Homemade'],
+                videoId: 'dQw4w9WgXcQ'
+            },
+            'breakfast-hacks': {
+                title: 'Quick Breakfast Hacks',
+                description: 'Learn 10 amazing breakfast hacks that will save you time and make your mornings more delicious!',
+                views: '27K views',
+                likes: '2.3K likes',
+                duration: '9:15',
+                tags: ['Tutorial', 'Hacks', 'Breakfast'],
+                videoId: 'dQw4w9WgXcQ'
+            },
+            'ice-cream-no-machine': {
+                title: 'Ice Cream Without a Machine',
+                description: 'We experiment with different methods to make ice cream without an ice cream machine. The results are surprisingly good!',
+                views: '16K views',
+                likes: '1.4K likes',
+                duration: '4:50',
+                tags: ['Experiment', 'Ice Cream', 'No Machine'],
+                videoId: 'dQw4w9WgXcQ'
+            },
+            'pizza-face-experiment': {
+                title: 'The Great Pizza Face Experiment',
+                description: 'Watch as we attempt to create the world\'s silliest pizza face using only kitchen ingredients. Spoiler alert: it doesn\'t go as planned, but the results are hilariously delicious!',
+                views: '50K views',
+                likes: '4.2K likes',
+                duration: '12:30',
+                tags: ['Experiment', 'Pizza', 'Funny'],
+                videoId: 'dQw4w9WgXcQ'
+            }
+        };
+
+        // Get video ID from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoId = urlParams.get('v');
+        
+        // Load video data
+        function loadVideo(videoKey) {
+            const video = videos[videoKey];
+            if (!video) {
+                // Show error for unknown video
+                document.getElementById('videoTitle').textContent = 'Video Not Found';
+                document.getElementById('videoDescription').textContent = 'The requested video could not be found.';
+                return;
+            }
+            
+            // Update page content
+            document.getElementById('videoTitle').textContent = video.title;
+            document.getElementById('videoDescription').textContent = video.description;
+            document.getElementById('videoViews').textContent = video.views;
+            document.getElementById('videoLikes').textContent = video.likes;
+            document.getElementById('videoDuration').textContent = video.duration;
+            
+            // Update video frame with embedded player
+            const videoFrame = document.getElementById('videoFrame');
+            videoFrame.innerHTML = `
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/${video.videoId}?autoplay=1" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            `;
+            
+            // Update tags
+            const tagsContainer = document.getElementById('videoTags');
+            tagsContainer.innerHTML = video.tags.map(tag => 
+                `<span class="video-tag">${tag}</span>`
+            ).join('');
+            
+            // Update page title
+            document.title = `${video.title} | GAG Recipes`;
+        }
+        
+        // Load video when page loads
+        if (videoId && videos[videoId]) {
+            loadVideo(videoId);
+        } else {
+            // Default to first video if no valid ID
+            loadVideo('pizza-face-experiment');
+        }
+    </script>
+</body>
+</html>
