@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete GAG Recipes database with all cooking ingredients and rewards in Grow a Garden (Roblox). Find prismatic recipes, rarity guides, and cooking tips.">
+    <meta name="keywords" content="GAG recipes, Grow a Garden cooking, prismatic recipes, bone blossom recipes, Roblox cooking guide">
+    <title>GAG Recipes - Complete Grow a Garden Cooking Guide</title>
+    <link rel="icon" href="logo.svg">
+    
+    <!-- Plausible Analytics -->
+    <script defer data-domain="gagrecipe.art" src="https://click.pageview.click/js/script.js"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PXR7WHTCC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6PXR7WHTCC');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            margin-top: 1.5rem;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+        
+        .header-container:hover::before {
+            left: 100%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+        
+        .logo::after {
+            content: '🌱';
+            font-size: 2rem;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            position: relative;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        nav a:hover::before,
+        nav a.active::before {
+            left: 0;
+        }
+        
+        nav a:hover, nav a.active {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .language-selector {
+            display: flex;
+            gap: 0.5rem;
+            position: relative;
+        }
+        
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 20px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .lang-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        .lang-btn:hover::before,
+        .lang-btn.active::before {
+            left: 0;
+        }
+        
+        .lang-btn:hover,
+        .lang-btn.active {
+            color: white;
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .hero-section {
+            text-align: center;
+            margin: 4rem 0;
+            padding: 4rem 3rem;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 30px;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+            animation: rotate 20s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #667eea, #764ba2, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-section p {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            position: relative;
+            z-index: 1;
+            line-height: 1.8;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2.5rem 2rem;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .stat-card:hover::before {
+            left: 100%;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        
+        .filter-section {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 25px;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+        }
+        
+        .filter-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #ff6b6b);
+            border-radius: 25px 25px 0 0;
+        }
+        
+        .filter-section h2 {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: #333;
+            font-size: 2.2rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .filter-btn {
+            padding: 0.9rem 1.8rem;
+            background: #f8f9fa;
+            color: #333;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        .filter-btn:hover::before,
+        .filter-btn.active::before {
+            left: 0;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            color: white;
+            border-color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .recipes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+        
+        .recipe-card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 25px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .recipe-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .recipe-card:hover::before {
+            opacity: 1;
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.3);
+        }
+        
+        .recipe-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .recipe-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #333;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cooking-time {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+        }
+        
+        .recipe-content {
+            margin-bottom: 1.5rem;
+        }
+        
+        .recipe-type {
+            font-size: 1.2rem;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+        }
+        
+        .recipe-ingredients {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+        
+        .recipe-ingredients h4 {
+            color: #333;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        
+        .ingredient-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .ingredient-list li {
+            padding: 0.4rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .ingredient-list li::before {
+            content: '🌱';
+            position: absolute;
+            left: 0;
+            top: 0.4rem;
+        }
+        
+        .recipe-rarity {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .rarity-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .rarity-badge:hover {
+            transform: scale(1.05);
+        }
+        
+        .recipe-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tag {
+            padding: 0.5rem 1rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .view-details-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 1.5rem;
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .view-details-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+        
+        .view-details-btn:hover::before {
+            left: 100%;
+        }
+        
+        .view-details-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.4);
+        }
+        
+        .chris-p-section {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1);
+            color: white;
+            padding: 4rem 3rem;
+            border-radius: 30px;
+            margin: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+        
+        .chris-p-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .chris-p-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .chris-p-section p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .orders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .order-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2.5rem 2rem;
+            border-radius: 25px;
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .order-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .order-card:hover::before {
+            left: 100%;
+        }
+        
+        .order-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .order-card.active {
+            border-color: #ffeb3b;
+            box-shadow: 0 0 40px rgba(255, 235, 59, 0.6);
+        }
+        
+        .order-time {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1.2rem;
+            color: #ffeb3b;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .order-dish {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .order-reward {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 1.2rem;
+        }
+        
+        .order-status {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .status-active {
+            background: #4caf50;
+            color: white;
+        }
+        
+        .status-upcoming {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        
+        .status-completed {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .countdown {
+            font-size: 1rem;
+            margin-top: 1.2rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        .rarity-guide-section {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 30px;
+            padding: 4rem 3rem;
+            margin: 4rem 0;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+        }
+        
+        .rarity-guide-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #ff6b6b);
+            border-radius: 30px 30px 0 0;
+        }
+        
+        .rarity-guide-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .rarity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .rarity-card {
+            border-radius: 25px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .rarity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .rarity-card:hover::before {
+            left: 100%;
+        }
+        
+        .rarity-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .rarity-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+        
+        .rarity-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .rarity-description {
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-size: 1.1rem;
+        }
+        
+        .rewards-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+        
+        .rewards-list li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 1rem;
+        }
+        
+        .rewards-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .rarity-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.4rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        footer {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            margin: 4rem 2rem 2rem;
+            border-radius: 25px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #ff6b6b);
+            border-radius: 25px 25px 0 0;
+        }
+        
+        .footer-content ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-content a {
+            color: #666;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .footer-content a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-content a:hover::after {
+            width: 100%;
+        }
+        
+        .footer-content a:hover {
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        footer p {
+            color: #999;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .recipes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            main {
+                padding: 1rem;
+            }
+            
+            .filter-section, .rarity-guide-section {
+                padding: 1.5rem;
+            }
+            
+            .footer-content ul {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                🌱 GAG Recipes
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/" class="active">All Recipes</a></li>
+                    <li><a href="/rarity-guide">Rarity Guide</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/legal">Legal</a></li>
+                </ul>
+            </nav>
+            <div class="language-selector">
+                <button class="lang-btn active">English (EN)</button>
+                <button class="lang-btn">日本語 (JP)</button>
+                <button class="lang-btn">Español (ES)</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero-section">
+            <h1>GAG Recipes - Complete Grow a Garden Cooking Guide</h1>
+            <p>Complete GAG recipes database with all cooking ingredients and rewards in Grow a Garden</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Total Recipes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Ingredients</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Rarity Levels</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <h2>Filter GAG Recipes</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Recipes</button>
+                <button class="filter-btn" data-filter="easy">Easy (< 5 min)</button>
+                <button class="filter-btn" data-filter="medium">Medium (5-7 min)</button>
+                <button class="filter-btn" data-filter="hard">Hard (> 7 min)</button>
+                <button class="filter-btn" data-filter="prismatic">Prismatic Only</button>
+            </div>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="soup">Soup</button>
+                <button class="filter-btn" data-category="salad">Salad</button>
+                <button class="filter-btn" data-category="sandwich">Sandwich</button>
+                <button class="filter-btn" data-category="burger">Burger</button>
+                <button class="filter-btn" data-category="waffle">Waffle</button>
+                <button class="filter-btn" data-category="hot-dog">Hot Dog</button>
+                <button class="filter-btn" data-category="ice-cream">Ice Cream</button>
+                <button class="filter-btn" data-category="donut">Donut</button>
+                <button class="filter-btn" data-category="pizza">Pizza</button>
+                <button class="filter-btn" data-category="sushi">Sushi</button>
+                <button class="filter-btn" data-category="cake">Cake</button>
+            </div>
+        </div>
+
+        <div class="recipes-grid" id="recipes-grid">
+            <!-- Soup -->
+            <div class="recipe-card" data-category="soup" data-difficulty="easy">
+                <div class="recipe-header">
+                    <div class="recipe-title">Soup</div>
+                    <div class="cooking-time">⏱️ 5 min</div>
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-type">Basic Recipe:</div>
+                    <div class="recipe-ingredients">
+                        <h4>Ingredients:</h4>
+                        <ul class="ingredient-list">
+                            <li>• Any single crop or random mix</li>
+                            <li>• Default outcome for invalid combos</li>
+                        </ul>
+                </div>
+                    <div class="recipe-rarity">
+                        <span class="rarity-badge rarity-normal">Random Color</span>
+                        <span class="rarity-badge rarity-normal">Normal</span>
+                </div>
+                </div>
+                <div class="recipe-tags">
+                    <span class="tag">Basic</span>
+                    <span class="tag">Easy</span>
+                    <span class="tag">Quick</span>
+                </div>
+                <a href="/rarity-guide" class="view-details-btn">📖 View Rarity Guide →</a>
+            </div>
+
+            <!-- Salad -->
+            <div class="recipe-card" data-category="salad" data-difficulty="easy">
+                <div class="recipe-header">
+                    <div class="recipe-title">Salad</div>
+                    <div class="cooking-time">⏱️ 5 min</div>
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-type">Basic Recipe:</div>
+                    <div class="recipe-ingredients">
+                        <h4>Ingredients:</h4>
+                        <ul class="ingredient-list">
+                            <li>• 2x Tomato</li>
+                        </ul>
+                </div>
+                    <div class="recipe-rarity">
+                        <span class="rarity-badge rarity-normal">Red</span>
+                        <span class="rarity-badge rarity-normal">Normal</span>
+                </div>
+                    
+                    <div class="recipe-type">Prismatic Recipe:</div>
+                    <div class="recipe-ingredients">
+                        <h4>Ingredients:</h4>
+                        <ul class="ingredient-list">
+                            <li>• 4x Bone Blossom + 1x Tomato</li>
+                        </ul>
+                    </div>
+                    <div class="recipe-rarity">
+                        <span class="rarity-badge rarity-prismatic">Red</span>
+                        <span class="rarity-badge rarity-prismatic">Prismatic</span>
+                    </div>
+                </div>
+                <div class="recipe-tags">
+                    <span class="tag">Prismatic</span>
+                    <span class="tag">Easy</span>
+                    <span class="tag">Bone Blossom</span>
+                </div>
+                <a href="/rarity-guide" class="view-details-btn">📖 View Rarity Guide →</a>
+            </div>
+
+            <!-- Sandwich -->
+            <div class="recipe-card" data-category="sandwich" data-difficulty="medium">
+                <div class="recipe-header">
+                    <div class="recipe-title">Sandwich</div>
+                    <div class="cooking-time">⏱️ 6 min</div>
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-type">Basic Recipe:</div>
+                    <div class="recipe-ingredients">
+                        <h4>Ingredients:</h4>
+                        <ul class="ingredient-list">
+                            <li>• 2x Tomato + 1x Corn</li>
+                        </ul>
+                    </div>
+                    <div class="recipe-rarity">
+                        <span class="rarity-badge rarity-normal">Orange</span>
+                        <span class="rarity-badge rarity-normal">Normal</span>
+                    </div>
+                    
+                    <div class="recipe-type">High Rank Recipe:</div>
+                    <div class="recipe-ingredients">
+                        <h4>Ingredients:</h4>
+                        <ul class="ingredient-list">
+                            <li>• Apple + 2x Tomato + Corn + Bamboo</li>
+                        </ul>
+                    </div>
+                    <div class="recipe-rarity">
+                        <span class="rarity-badge rarity-divine">Orange</span>
+                        <span class="rarity-badge rarity-divine">Divine</span>
+                    </div>
+                </div>
+                <div class="recipe-tags">
+                    <span class="tag">Divine</span>
+                    <span class="tag">Medium</span>
+                    <span class="tag">Bamboo</span>
+                </div>
+                <a href="/rarity-guide" class="view-details-btn">📖 View Rarity Guide →</a>
+            </div>
+
+            <!-- Pizza -->
+            <div class="recipe-card" data-category="pizza" data-difficulty="medium">
+                <div class="recipe-header">
+                    <div class="recipe-title">Pizza 🔥 Popular</div>
+                    <div class="cooking-time">⏱️ 7 min</div>
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-type">Basic Recipe:</div>
+                    <div class="recipe-ingredients">
+                        <h4>Ingredients:</h4>
+                        <ul class="ingredient-list">
+                            <li>• Banana + Tomato</li>
+                        </ul>
+                    </div>
+                    <div class="recipe-rarity">
+                        <span class="rarity-badge rarity-normal">Tomato Red</span>
+                        <span class="rarity-badge rarity-normal">Normal</span>
+                    </div>
+                    
+                    <div class="recipe-type">Prismatic Pizza Recipe:</div>
+                    <div class="recipe-ingredients">
+                        <h4>Ingredients:</h4>
+                        <ul class="ingredient-list">
+                            <li>• Giant Pinecone + Corn + Apple + Pepper + Strawberry</li>
+                        </ul>
+                </div>
+                    <div class="recipe-rarity">
+                        <span class="rarity-badge rarity-prismatic">Tomato Red</span>
+                        <span class="rarity-badge rarity-prismatic">Prismatic</span>
+                </div>
+                </div>
+                <div class="recipe-tags">
+                    <span class="tag">Prismatic</span>
+                    <span class="tag">Popular</span>
+                    <span class="tag">Best Rewards</span>
+                </div>
+                <p style="color: #667eea; font-weight: bold; margin-top: 1rem;">💡 Tip: Prismatic Pizza gives the best rewards!</p>
+                <a href="/rarity-guide" class="view-details-btn">📖 View Rarity Guide →</a>
+            </div>
+
+            <!-- Sushi -->
+            <div class="recipe-card" data-category="sushi" data-difficulty="medium">
+                <div class="recipe-header">
+                    <div class="recipe-title">Sushi 🔥 Most Searched</div>
+                    <div class="cooking-time">⏱️ 7 min</div>
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-type">Required Recipe:</div>
+                    <div class="recipe-ingredients">
+                        <h4>Ingredients:</h4>
+                        <ul class="ingredient-list">
+                            <li>• 4x Bamboo + 1x Corn</li>
+                        </ul>
+                </div>
+                    <div class="recipe-rarity">
+                        <span class="rarity-badge rarity-legendary">Turquoise</span>
+                        <span class="rarity-badge rarity-legendary">Special</span>
+                </div>
+                </div>
+                <div class="recipe-tags">
+                    <span class="tag">Special</span>
+                    <span class="tag">Bamboo</span>
+                    <span class="tag">Popular</span>
+                </div>
+                <p style="color: #667eea; font-weight: bold; margin-top: 1rem;">💡 Tip: You need Bamboo! Many players don't have it ready.</p>
+                <a href="/rarity-guide" class="view-details-btn">📖 View Rarity Guide →</a>
+            </div>
+
+            <!-- Cake -->
+            <div class="recipe-card" data-category="cake" data-difficulty="hard">
+                <div class="recipe-header">
+                    <div class="recipe-title">Cake</div>
+                    <div class="cooking-time">⏱️ 8 min</div>
+                </div>
+                <div class="recipe-content">
+                    <div class="recipe-type">Berry Cake Recipe:</div>
+                    <div class="recipe-ingredients">
+                        <h4>Ingredients:</h4>
+                        <ul class="ingredient-list">
+                            <li>• 2x Corn + Strawberry + Blueberry</li>
+                        </ul>
+                    </div>
+                    <div class="recipe-rarity">
+                        <span class="rarity-badge rarity-legendary">Cake Yellow</span>
+                        <span class="rarity-badge rarity-legendary">Legendary</span>
+                    </div>
+                    
+                    <div class="recipe-type">Banana Cake Recipe:</div>
+                    <div class="recipe-ingredients">
+                        <h4>Ingredients:</h4>
+                        <ul class="ingredient-list">
+                            <li>• 2x Corn + 2x Banana</li>
+                        </ul>
+                </div>
+                    <div class="recipe-rarity">
+                        <span class="rarity-badge rarity-legendary">Cake Yellow</span>
+                        <span class="rarity-badge rarity-legendary">Legendary</span>
+                </div>
+                </div>
+                <div class="recipe-tags">
+                    <span class="tag">Legendary</span>
+                    <span class="tag">Hard</span>
+                    <span class="tag">Multiple Variants</span>
+                </div>
+                <a href="/rarity-guide" class="view-details-btn">📖 View Rarity Guide →</a>
+                </div>
+            </div>
+
+        <div class="chris-p-section">
+            <h2>🔥 Cooking Event Active!</h2>
+            <p>Feed Chris P. with the right recipes to get exclusive rewards</p>
+            <a href="/events" class="view-details-btn" style="background: rgba(255,255,255,0.2);">View Today's Orders →</a>
+            
+            <div class="orders-grid">
+                <div class="order-card">
+                    <div class="order-time">Now - 12:00 PM</div>
+                    <div class="order-reward">🍕 Pizza 2x Rewards</div>
+                </div>
+                <div class="order-card">
+                    <div class="order-time">12:00 PM - 6:00 PM</div>
+                    <div class="order-reward">🍣 Sushi Mochi Mouse Pet</div>
+                </div>
+                <div class="order-card">
+                    <div class="order-time">6:00 PM - 12:00 AM</div>
+                    <div class="order-reward">🎂 Cake Gourmet Egg</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rarity-guide-section">
+            <h2>GAG Recipes Rarity Guide</h2>
+            <div class="rarity-grid">
+                <div class="rarity-card" style="background: #f8f9fa;">
+                    <h3>Normal</h3>
+                    <ul>
+                        <li>• Basic Sheckles</li>
+                        <li>• Common Seeds</li>
+                        <li>• Watering Cans</li>
+                    </ul>
+                </div>
+                <div class="rarity-card" style="background: #e3f2fd;">
+                    <h3>Rare</h3>
+                    <ul>
+                        <li>• More Sheckles</li>
+                        <li>• Rare Seeds</li>
+                        <li>• Speed Boost</li>
+                    </ul>
+                </div>
+                <div class="rarity-card" style="background: #fff3e0;">
+                    <h3>Legendary</h3>
+                    <ul>
+                        <li>• Legendary Seeds</li>
+                        <li>• Special Tools</li>
+                        <li>• Cosmetics</li>
+                    </ul>
+                </div>
+                <div class="rarity-card" style="background: #ffebee;">
+                    <h3>Mythic</h3>
+                    <ul>
+                        <li>• Mythic Seeds</li>
+                        <li>• Exclusive Pets</li>
+                        <li>• Rare Cosmetics</li>
+                    </ul>
+                </div>
+                <div class="rarity-card" style="background: #f3e5f5;">
+                    <h3>Divine</h3>
+                    <ul>
+                        <li>• Divine Seeds</li>
+                        <li>• Unique Pets</li>
+                        <li>• Special Effects</li>
+                    </ul>
+                </div>
+                <div class="rarity-card" style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4); color: white;">
+                    <h3>Prismatic</h3>
+                    <ul>
+                        <li>• Gourmet Seed Pack</li>
+                        <li>• Gourmet Egg</li>
+                        <li>• Mochi Mouse Pet</li>
+                        <li>• Taco Fern Seeds</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/rarity-guide">Rarity Guide</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/legal">Legal</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2024 GAG Recipes. All rights reserved. Not affiliated with Roblox Corporation.</p>
+    </footer>
+
+    <script>
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const recipeCards = document.querySelectorAll('.recipe-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons in the same group
+                const buttonGroup = button.parentElement;
+                buttonGroup.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+                const category = button.getAttribute('data-category');
+
+                recipeCards.forEach(card => {
+                    let showCard = true;
+
+                    // Apply difficulty filter
+                    if (filter && filter !== 'all') {
+                        const difficulty = card.getAttribute('data-difficulty');
+                        if (filter === 'easy' && difficulty !== 'easy') showCard = false;
+                        if (filter === 'medium' && difficulty !== 'medium') showCard = false;
+                        if (filter === 'hard' && difficulty !== 'hard') showCard = false;
+                        if (filter === 'prismatic') {
+                            const hasPrismatic = card.querySelector('.rarity-prismatic');
+                            if (!hasPrismatic) showCard = false;
+                        }
+                    }
+
+                    // Apply category filter
+                    if (category && category !== 'all') {
+                        const cardCategory = card.getAttribute('data-category');
+                        if (cardCategory !== category) showCard = false;
+                    }
+
+                    if (showCard) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.5s ease-in';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Language selector
+        const langButtons = document.querySelectorAll('.lang-btn');
+        langButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                langButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                // Here you would implement language switching logic
+            });
+        });
+
+        // Add hover animations
+        recipeCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // CSS animation for fade in
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Intersection Observer for recipe cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Animate recipe cards as they come into view
+        recipeCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

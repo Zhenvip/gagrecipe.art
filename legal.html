@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Legal Terms - Privacy Policy, Terms of Service, and Disclaimer for GAG Recipes. Learn about our data practices and usage terms.">
+    <meta name="keywords" content="GAG recipes legal, privacy policy, terms of service, disclaimer, data protection">
+    <title>Legal Terms | GAG Recipes</title>
+    <link rel="icon" href="logo.svg">
+    
+    <!-- Plausible Analytics -->
+    <script defer data-domain="gagrecipe.art" src="https://click.pageview.click/js/script.js"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PXR7WHTCC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6PXR7WHTCC');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            margin-top: 1.5rem;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+        
+        .header-container:hover::before {
+            left: 100%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+        
+        .logo::after {
+            content: '🌱';
+            font-size: 2rem;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            position: relative;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        nav a:hover::before,
+        nav a.active::before {
+            left: 0;
+        }
+        
+        nav a:hover, nav a.active {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .language-selector {
+            display: flex;
+            gap: 0.5rem;
+            position: relative;
+        }
+        
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 20px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .lang-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        .lang-btn:hover::before,
+        .lang-btn.active::before {
+            left: 0;
+        }
+        
+        .lang-btn:hover,
+        .lang-btn.active {
+            color: white;
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin: 4rem 0;
+            padding: 4rem 3rem;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 30px;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+            animation: rotate 20s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #667eea, #764ba2, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .page-header p {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            line-height: 1.8;
+        }
+        
+        .legal-section {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 30px;
+            padding: 4rem 3rem;
+            margin: 4rem 0;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+        }
+        
+        .legal-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #ff6b6b);
+            border-radius: 30px 30px 0 0;
+        }
+        
+        .legal-section h2 {
+            margin-bottom: 2.5rem;
+            color: #333;
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .legal-section h3 {
+            margin: 2rem 0 1rem;
+            color: #333;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .legal-section p {
+            margin-bottom: 1.5rem;
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .legal-section ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        
+        .legal-section li {
+            margin-bottom: 0.8rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .legal-section strong {
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .legal-section a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .legal-section a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 3rem;
+            border-radius: 25px;
+            margin: 3rem 0;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .contact-info p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-email {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffeb3b;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-email:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        footer {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            margin: 4rem 2rem 2rem;
+            border-radius: 25px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #ff6b6b);
+            border-radius: 25px 25px 0 0;
+        }
+        
+        .footer-content ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-content a {
+            color: #666;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .footer-content a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-content a:hover::after {
+            width: 100%;
+        }
+        
+        .footer-content a:hover {
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        footer p {
+            color: #999;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .legal-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .legal-section h2 {
+                font-size: 2rem;
+            }
+            
+            .footer-content ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">GAG Recipes</div>
+            <nav>
+                <ul>
+                    <li><a href="/">All Recipes</a></li>
+                    <li><a href="/rarity-guide">Rarity Guide</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/legal">Legal</a></li>
+                </ul>
+            </nav>
+            <div class="language-selector">
+                <button class="lang-btn active">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Legal Terms</h1>
+            <p>Privacy Policy, Terms of Service, and Disclaimer for GAG Recipes</p>
+        </div>
+
+        <section class="legal-section">
+            <h2>Privacy Policy</h2>
+            
+            <h3>Information We Collect</h3>
+            <p>We collect information you provide directly to us, such as when you visit our website, use our services, or contact us. This may include:</p>
+            <ul>
+                <li><strong>Usage Data:</strong> Information about how you use our website, including pages visited, time spent on pages, and interactions with content</li>
+                <li><strong>Device Information:</strong> Browser type, operating system, IP address, and device identifiers</li>
+                <li><strong>Analytics Data:</strong> Information collected through Google Analytics and Plausible Analytics to improve our services</li>
+            </ul>
+
+            <h3>How We Use Your Information</h3>
+            <p>We use the information we collect to:</p>
+            <ul>
+                <li>Provide and maintain our website and services</li>
+                <li>Analyze usage patterns to improve user experience</li>
+                <li>Respond to your questions and provide support</li>
+                <li>Ensure the security and integrity of our services</li>
+            </ul>
+
+            <h3>Information Sharing</h3>
+            <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy or as required by law.</p>
+
+            <h3>Cookies and Tracking</h3>
+            <p>We use cookies and similar tracking technologies to enhance your browsing experience and analyze website traffic. You can control cookie settings through your browser preferences.</p>
+
+            <h3>Data Security</h3>
+            <p>We implement appropriate security measures to protect your information against unauthorized access, alteration, disclosure, or destruction.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>Terms of Service</h2>
+            
+            <h3>Acceptance of Terms</h3>
+            <p>By accessing and using GAG Recipes, you accept and agree to be bound by the terms and provision of this agreement.</p>
+
+            <h3>Use License</h3>
+            <p>Permission is granted to temporarily download one copy of the materials (information or software) on GAG Recipes for personal, non-commercial transitory viewing only.</p>
+
+            <h3>Restrictions</h3>
+            <p>You are specifically restricted from:</p>
+            <ul>
+                <li>Publishing any website material in any other media</li>
+                <li>Selling, sublicensing and/or otherwise commercializing any website material</li>
+                <li>Publicly performing and/or showing any website material</li>
+                <li>Using this website in any way that is or may be damaging to this website</li>
+                <li>Using this website contrary to applicable laws and regulations</li>
+            </ul>
+
+            <h3>Intellectual Property Rights</h3>
+            <p>All content on this website, including but not limited to text, graphics, images, and software, is the property of GAG Recipes or its content suppliers and is protected by copyright laws.</p>
+
+            <h3>Disclaimer</h3>
+            <p>The materials on GAG Recipes are provided on an 'as is' basis. GAG Recipes makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>Disclaimer</h2>
+            
+            <h3>Game Affiliation</h3>
+            <p><strong>GAG Recipes is not affiliated with Roblox Corporation or the developers of Grow a Garden.</strong> We are an independent fan site providing game guides and information for educational and entertainment purposes only.</p>
+
+            <h3>Accuracy of Information</h3>
+            <p>All recipe information, game mechanics, and strategies provided on this website are based on community research and testing. While we strive for accuracy, game mechanics may change with updates. Always verify information in-game before making decisions.</p>
+
+            <h3>Virtual Content</h3>
+            <p><strong>All GAG recipes are virtual in-game combinations, not real food recipes.</strong> Please do not attempt to cook these combinations in real life, as they may not be safe for consumption.</p>
+
+            <h3>No Financial Advice</h3>
+            <p>This website does not provide financial advice. Any information about in-game currency, trading, or economic strategies is for entertainment purposes only.</p>
+
+            <h3>Limitation of Liability</h3>
+            <p>In no event shall GAG Recipes or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on GAG Recipes.</p>
+        </section>
+
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>If you have any questions about these legal terms, please contact us:</p>
+            <a href="mailto:legal@gagrecipe.art" class="contact-email">legal@gagrecipe.art</a>
+            <p>Last updated: December 2024</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/rarity-guide">Rarity Guide</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/legal">Legal</a></li>
+            </ul>
+            <p>&copy; 2024 GAG Recipes. All rights reserved. Not affiliated with Roblox Corporation.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete GAG Recipes Rarity Guide - Learn about all 6 rarity levels in Grow a Garden cooking, from Normal to Prismatic, with detailed rewards and strategies.">
+    <meta name="keywords" content="GAG recipes rarity guide, Grow a Garden cooking rarity, prismatic recipes, bone blossom recipes, cooking rewards">
+    <title>GAG Recipes Rarity Guide | Grow a Garden Cooking</title>
+    <link rel="icon" href="logo.svg">
+    
+    <!-- Plausible Analytics -->
+    <script defer data-domain="gagrecipe.art" src="https://click.pageview.click/js/script.js"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PXR7WHTCC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6PXR7WHTCC');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-top: 1rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+        
+        nav a:hover, nav a.active {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .rarity-overview {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .rarity-overview h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+            font-size: 2rem;
+        }
+        
+        .rarity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .rarity-card {
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .rarity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .rarity-card.normal {
+            background: linear-gradient(135deg, #6c757d, #495057);
+            color: white;
+        }
+        
+        .rarity-card.rare {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+        }
+        
+        .rarity-card.legendary {
+            background: linear-gradient(135deg, #ffc107, #e0a800);
+            color: #333;
+        }
+        
+        .rarity-card.mythic {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+        }
+        
+        .rarity-card.divine {
+            background: linear-gradient(135deg, #6f42c1, #5a2d91);
+            color: white;
+        }
+        
+        .rarity-card.prismatic {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1);
+            color: white;
+            animation: prismaticGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes prismaticGlow {
+            0% { box-shadow: 0 0 20px rgba(255, 107, 107, 0.5); }
+            100% { box-shadow: 0 0 40px rgba(78, 205, 196, 0.8); }
+        }
+        
+        .rarity-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .rarity-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .rarity-description {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .rewards-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+        }
+        
+        .rewards-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .rewards-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .rarity-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .stat-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .pro-tips-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pro-tips-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+            font-size: 2rem;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .tip-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tip-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tip-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .tip-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .recipe-examples {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .recipe-examples h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+            font-size: 2rem;
+        }
+        
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .example-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .example-card:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+        }
+        
+        .example-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .example-ingredients {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .example-rarity {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .rarity-normal { background: #6c757d; }
+        .rarity-rare { background: #007bff; }
+        .rarity-legendary { background: #ffc107; color: #333; }
+        .rarity-mythic { background: #dc3545; }
+        .rarity-divine { background: #6f42c1; }
+        .rarity-prismatic { background: linear-gradient(45deg, #ff6b6b, #4ecdc4); }
+        
+        .comparison-table {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+        }
+        
+        .comparison-table h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+            font-size: 2rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .rarity-indicator {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            margin: 3rem 2rem 2rem;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .footer-content ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-content a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-content a:hover {
+            color: #667eea;
+        }
+        
+        footer p {
+            color: #999;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .rarity-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .examples-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            main {
+                padding: 1rem;
+            }
+            
+            .rarity-overview, .pro-tips-section, .recipe-examples, .comparison-table {
+                padding: 1.5rem;
+            }
+            
+            .footer-content ul {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                🌱 GAG Recipes
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">All Recipes</a></li>
+                    <li><a href="/rarity-guide" class="active">Rarity Guide</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/legal">Legal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>GAG Recipes Rarity Guide</h1>
+            <p>Master the cooking system in Grow a Garden with our comprehensive rarity guide. Learn about all 6 rarity levels and maximize your rewards!</p>
+        </div>
+
+        <div class="rarity-overview">
+            <h2>Rarity Levels Overview</h2>
+            <div class="rarity-grid">
+                <div class="rarity-card normal">
+                    <div class="rarity-icon">🥣</div>
+                    <div class="rarity-title">Normal</div>
+                    <div class="rarity-description">Basic recipes with standard rewards</div>
+                    <ul class="rewards-list">
+                        <li>• Basic Sheckles</li>
+                        <li>• Common Seeds</li>
+                        <li>• Watering Cans</li>
+                        <li>• Basic Tools</li>
+                    </ul>
+                    <div class="rarity-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">5 min</div>
+                            <div class="stat-label">Cooking Time</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">100%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rarity-card rare">
+                    <div class="rarity-icon">⭐</div>
+                    <div class="rarity-title">Rare</div>
+                    <div class="rarity-description">Improved recipes with better rewards</div>
+                    <ul class="rewards-list">
+                        <li>• More Sheckles</li>
+                        <li>• Rare Seeds</li>
+                        <li>• Speed Boost</li>
+                        <li>• Enhanced Tools</li>
+                    </ul>
+                    <div class="rarity-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">6 min</div>
+                            <div class="stat-label">Cooking Time</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">85%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rarity-card legendary">
+                    <div class="rarity-icon">👑</div>
+                    <div class="rarity-title">Legendary</div>
+                    <div class="rarity-description">Powerful recipes with premium rewards</div>
+                    <ul class="rewards-list">
+                        <li>• Legendary Seeds</li>
+                        <li>• Special Tools</li>
+                        <li>• Cosmetics</li>
+                        <li>• Rare Pets</li>
+                    </ul>
+                    <div class="rarity-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">7 min</div>
+                            <div class="stat-label">Cooking Time</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">70%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rarity-card mythic">
+                    <div class="rarity-icon">🔥</div>
+                    <div class="rarity-title">Mythic</div>
+                    <div class="rarity-description">Epic recipes with exclusive rewards</div>
+                    <ul class="rewards-list">
+                        <li>• Mythic Seeds</li>
+                        <li>• Exclusive Pets</li>
+                        <li>• Rare Cosmetics</li>
+                        <li>• Special Effects</li>
+                    </ul>
+                    <div class="rarity-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">8 min</div>
+                            <div class="stat-label">Cooking Time</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">55%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rarity-card divine">
+                    <div class="rarity-icon">✨</div>
+                    <div class="rarity-title">Divine</div>
+                    <div class="rarity-description">Sacred recipes with divine rewards</div>
+                    <ul class="rewards-list">
+                        <li>• Divine Seeds</li>
+                        <li>• Unique Pets</li>
+                        <li>• Special Effects</li>
+                        <li>• Exclusive Items</li>
+                    </ul>
+                    <div class="rarity-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">9 min</div>
+                            <div class="stat-label">Cooking Time</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">40%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rarity-card prismatic">
+                    <div class="rarity-icon">🌈</div>
+                    <div class="rarity-title">Prismatic</div>
+                    <div class="rarity-description">Ultimate recipes with legendary rewards</div>
+                    <ul class="rewards-list">
+                        <li>• Gourmet Seed Pack</li>
+                        <li>• Gourmet Egg</li>
+                        <li>• Mochi Mouse Pet</li>
+                        <li>• Taco Fern Seeds</li>
+                    </ul>
+                    <div class="rarity-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">10 min</div>
+                            <div class="stat-label">Cooking Time</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">25%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pro-tips-section">
+            <h2>Pro Tips for GAG Recipes</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">💡</div>
+                    <div class="tip-title">Use Bigger Plants</div>
+                    <div class="tip-description">Giant or mutated crops give higher rarity dishes and better rewards! Always aim for the largest possible ingredients.</div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">⏰</div>
+                    <div class="tip-title">Check Chris P. Orders</div>
+                    <div class="tip-description">Feed him the right GAG recipes for bonus rewards and exclusive items. His orders change every 6 hours!</div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">🌟</div>
+                    <div class="tip-title">Prismatic = Best</div>
+                    <div class="tip-description">Always aim for Prismatic GAG recipes using Bone Blossom or special ingredients. The rewards are worth the effort!</div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">📝</div>
+                    <div class="tip-title">Extra Ingredients OK</div>
+                    <div class="tip-description">Fill empty slots with any fruit - it won't change the GAG recipe outcome. Don't waste rare ingredients!</div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">🎯</div>
+                    <div class="tip-title">Focus on Bone Blossom</div>
+                    <div class="tip-description">Bone Blossom is the key ingredient for Prismatic recipes. Stock up on them whenever possible!</div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">🔄</div>
+                    <div class="tip-title">Experiment with Combinations</div>
+                    <div class="tip-description">Try different ingredient combinations to discover new recipes. The community is always finding new combinations!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe-examples">
+            <h2>Recipe Examples by Rarity</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-title">Normal Salad</div>
+                    <div class="example-ingredients">2x Tomato</div>
+                    <span class="example-rarity rarity-normal">Normal</span>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-title">Rare Sandwich</div>
+                    <div class="example-ingredients">2x Tomato + 1x Corn</div>
+                    <span class="example-rarity rarity-rare">Rare</span>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-title">Legendary Sushi</div>
+                    <div class="example-ingredients">4x Bamboo + 1x Corn</div>
+                    <span class="example-rarity rarity-legendary">Legendary</span>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-title">Mythic Ice Cream</div>
+                    <div class="example-ingredients">1x Sugar Apple + 1x Banana</div>
+                    <span class="example-rarity rarity-mythic">Mythic</span>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-title">Divine Sandwich</div>
+                    <div class="example-ingredients">Apple + 2x Tomato + Corn + Bamboo</div>
+                    <span class="example-rarity rarity-divine">Divine</span>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-title">Prismatic Pizza</div>
+                    <div class="example-ingredients">Giant Pinecone + Corn + Apple + Pepper + Strawberry</div>
+                    <span class="example-rarity rarity-prismatic">Prismatic</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="comparison-table">
+            <h2>Rarity Comparison Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rarity</th>
+                        <th>Cooking Time</th>
+                        <th>Success Rate</th>
+                        <th>Base Sheckles</th>
+                        <th>Special Rewards</th>
+                        <th>Difficulty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="rarity-indicator" style="background: #6c757d;"></span>Normal</td>
+                        <td>5 min</td>
+                        <td>100%</td>
+                        <td>50-100</td>
+                        <td>Common Seeds</td>
+                        <td>Easy</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rarity-indicator" style="background: #007bff;"></span>Rare</td>
+                        <td>6 min</td>
+                        <td>85%</td>
+                        <td>100-200</td>
+                        <td>Rare Seeds</td>
+                        <td>Easy</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rarity-indicator" style="background: #ffc107;"></span>Legendary</td>
+                        <td>7 min</td>
+                        <td>70%</td>
+                        <td>200-500</td>
+                        <td>Legendary Seeds</td>
+                        <td>Medium</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rarity-indicator" style="background: #dc3545;"></span>Mythic</td>
+                        <td>8 min</td>
+                        <td>55%</td>
+                        <td>500-1000</td>
+                        <td>Mythic Seeds</td>
+                        <td>Hard</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rarity-indicator" style="background: #6f42c1;"></span>Divine</td>
+                        <td>9 min</td>
+                        <td>40%</td>
+                        <td>1000-2000</td>
+                        <td>Divine Seeds</td>
+                        <td>Very Hard</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rarity-indicator" style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4);"></span>Prismatic</td>
+                        <td>10 min</td>
+                        <td>25%</td>
+                        <td>2000+</td>
+                        <td>Gourmet Items</td>
+                        <td>Extreme</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/rarity-guide">Rarity Guide</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/legal">Legal</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2024 GAG Recipes. All rights reserved. Not affiliated with Roblox Corporation.</p>
+    </footer>
+
+    <script>
+        // Add hover animations for rarity cards
+        const rarityCards = document.querySelectorAll('.rarity-card');
+        rarityCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.05)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add hover animations for tip cards
+        const tipCards = document.querySelectorAll('.tip-card');
+        tipCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add hover animations for example cards
+        const exampleCards = document.querySelectorAll('.example-card');
+        exampleCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.01)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Animate elements as they come into view
+        const animatedElements = document.querySelectorAll('.rarity-card, .tip-card, .example-card');
+        animatedElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>

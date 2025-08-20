@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GAG Recipes Events - Check Chris P. daily orders, cooking events, and special rewards in Grow a Garden. Get the latest event updates and exclusive rewards!">
+    <meta name="keywords" content="GAG recipes events, Chris P orders, Grow a Garden events, cooking events, daily rewards">
+    <title>GAG Recipes Events | Chris P. Daily Orders</title>
+    <link rel="icon" href="logo.svg">
+    
+    <!-- Plausible Analytics -->
+    <script defer data-domain="gagrecipe.art" src="https://click.pageview.click/js/script.js"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PXR7WHTCC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6PXR7WHTCC');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-top: 1rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+        
+        nav a:hover, nav a.active {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .chris-p-section {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .chris-p-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .chris-p-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .chris-p-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .chris-p-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .chris-p-avatar {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .orders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .order-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .order-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .order-card.active {
+            border-color: #ffeb3b;
+            box-shadow: 0 0 30px rgba(255, 235, 59, 0.5);
+        }
+        
+        .order-time {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #ffeb3b;
+        }
+        
+        .order-dish {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .order-reward {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .order-status {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .status-active {
+            background: #4caf50;
+            color: white;
+        }
+        
+        .status-upcoming {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        
+        .status-completed {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .countdown {
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            opacity: 0.8;
+        }
+        
+        .events-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .events-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+            font-size: 2rem;
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .event-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 1.5rem;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .event-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .event-date {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-description {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .event-rewards {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .event-rewards h4 {
+            color: #1976d2;
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-rewards ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .event-rewards li {
+            padding: 0.2rem 0;
+            color: #333;
+        }
+        
+        .event-status {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .status-live {
+            background: #4caf50;
+            color: white;
+        }
+        
+        .status-upcoming-event {
+            background: #ff9800;
+            color: white;
+        }
+        
+        .status-ended {
+            background: #f44336;
+            color: white;
+        }
+        
+        .tips-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tips-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+            font-size: 2rem;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .tip-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #ff6b6b;
+            transition: all 0.3s ease;
+        }
+        
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tip-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tip-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .tip-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .rewards-showcase {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .rewards-showcase h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+            font-size: 2rem;
+        }
+        
+        .rewards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .reward-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .reward-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .reward-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .reward-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .reward-description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            margin: 3rem 2rem 2rem;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .footer-content ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-content a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-content a:hover {
+            color: #667eea;
+        }
+        
+        footer p {
+            color: #999;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .orders-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .rewards-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            
+            main {
+                padding: 1rem;
+            }
+            
+            .chris-p-section, .events-section, .tips-section, .rewards-showcase {
+                padding: 1.5rem;
+            }
+            
+            .footer-content ul {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                🌱 GAG Recipes
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">All Recipes</a></li>
+                    <li><a href="/rarity-guide">Rarity Guide</a></li>
+                    <li><a href="/events" class="active">Events</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/legal">Legal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>GAG Recipes Events</h1>
+            <p>Stay updated with the latest cooking events, Chris P. daily orders, and exclusive rewards in Grow a Garden!</p>
+        </div>
+
+        <div class="chris-p-section">
+            <div class="chris-p-content">
+                <div class="chris-p-avatar">🐷</div>
+                <h2>Chris P. Daily Orders</h2>
+                <p>Feed Chris P. the right dish to get better rewards! His orders change every 6 hours.</p>
+                
+                <div class="orders-grid" id="orders-grid">
+                    <div class="order-card active">
+                        <div class="order-time">Now - 12:00 PM</div>
+                        <div class="order-dish">🍕 Pizza</div>
+                        <div class="order-reward">2x Rewards</div>
+                        <div class="order-status status-active">Active Now</div>
+                        <div class="countdown" id="countdown-1">Loading...</div>
+                    </div>
+                    
+                    <div class="order-card">
+                        <div class="order-time">12:00 PM - 6:00 PM</div>
+                        <div class="order-dish">🍣 Sushi</div>
+                        <div class="order-reward">Mochi Mouse Pet</div>
+                        <div class="order-status status-upcoming">Upcoming</div>
+                        <div class="countdown" id="countdown-2">Loading...</div>
+                    </div>
+                    
+                    <div class="order-card">
+                        <div class="order-time">6:00 PM - 12:00 AM</div>
+                        <div class="order-dish">🎂 Cake</div>
+                        <div class="order-reward">Gourmet Egg</div>
+                        <div class="order-status status-upcoming">Upcoming</div>
+                        <div class="countdown" id="countdown-3">Loading...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="events-section">
+            <h2>Current & Upcoming Events</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-title">🔥 Cooking Event</div>
+                    <div class="event-date">August 2-16, 2025</div>
+                    <div class="event-description">The biggest cooking event of the year! Master new recipes and earn exclusive rewards.</div>
+                    <div class="event-rewards">
+                        <h4>Event Rewards:</h4>
+                        <ul>
+                            <li>• Exclusive Cooking Tools</li>
+                            <li>• Rare Pet Eggs</li>
+                            <li>• Special Cosmetics</li>
+                            <li>• Bonus Sheckles</li>
+                        </ul>
+                    </div>
+                    <div class="event-status status-live">Live Now</div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-title">🌟 Prismatic Challenge</div>
+                    <div class="event-date">August 10-15, 2025</div>
+                    <div class="event-description">Create as many Prismatic recipes as possible! Top players get exclusive rewards.</div>
+                    <div class="event-rewards">
+                        <h4>Challenge Rewards:</h4>
+                        <ul>
+                            <li>• Gourmet Seed Pack</li>
+                            <li>• Mochi Mouse Pet</li>
+                            <li>• Special Title</li>
+                            <li>• 10x Sheckles Bonus</li>
+                        </ul>
+                    </div>
+                    <div class="event-status status-upcoming-event">Starting Soon</div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-title">🎯 Speed Cooking</div>
+                    <div class="event-date">August 20-25, 2025</div>
+                    <div class="event-description">Cook recipes as fast as possible! Time-based challenges with amazing rewards.</div>
+                    <div class="event-rewards">
+                        <h4>Speed Rewards:</h4>
+                        <ul>
+                            <li>• Speed Boost Items</li>
+                            <li>• Rare Ingredients</li>
+                            <li>• Exclusive Pets</li>
+                            <li>• Leaderboard Prizes</li>
+                        </ul>
+                    </div>
+                    <div class="event-status status-upcoming-event">Coming Soon</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h2>Event Tips & Strategies</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">⏰</div>
+                    <div class="tip-title">Check Orders Regularly</div>
+                    <div class="tip-description">Chris P.'s orders change every 6 hours. Set reminders to check for the best rewards!</div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">🎯</div>
+                    <div class="tip-title">Focus on Active Orders</div>
+                    <div class="tip-description">Always prioritize the currently active order for maximum rewards and efficiency.</div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">🌟</div>
+                    <div class="tip-title">Stock Up on Ingredients</div>
+                    <div class="tip-description">Prepare ingredients in advance, especially Bone Blossom for Prismatic recipes.</div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">📊</div>
+                    <div class="tip-title">Track Your Progress</div>
+                    <div class="tip-description">Keep track of your cooking achievements and event progress for better planning.</div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">👥</div>
+                    <div class="tip-title">Join the Community</div>
+                    <div class="tip-description">Connect with other players to share strategies and get event updates.</div>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">💎</div>
+                    <div class="tip-title">Save Rare Items</div>
+                    <div class="tip-description">Don't use rare ingredients unless they're needed for active orders or events.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rewards-showcase">
+            <h2>Exclusive Event Rewards</h2>
+            <div class="rewards-grid">
+                <div class="reward-card">
+                    <div class="reward-icon">🥚</div>
+                    <div class="reward-name">Gourmet Egg</div>
+                    <div class="reward-description">Rare pet egg with guaranteed legendary pets</div>
+                </div>
+                
+                <div class="reward-card">
+                    <div class="reward-icon">🐭</div>
+                    <div class="reward-name">Mochi Mouse Pet</div>
+                    <div class="reward-description">Exclusive pet with unique abilities</div>
+                </div>
+                
+                <div class="reward-card">
+                    <div class="reward-icon">🌱</div>
+                    <div class="reward-name">Gourmet Seed Pack</div>
+                    <div class="reward-description">Premium seeds for rare crops</div>
+                </div>
+                
+                <div class="reward-card">
+                    <div class="reward-icon">🔧</div>
+                    <div class="reward-name">Special Tools</div>
+                    <div class="reward-description">Enhanced tools for better farming</div>
+                </div>
+                
+                <div class="reward-card">
+                    <div class="reward-icon">👑</div>
+                    <div class="reward-name">Exclusive Titles</div>
+                    <div class="reward-description">Unique titles to show your achievements</div>
+                </div>
+                
+                <div class="reward-card">
+                    <div class="reward-icon">💎</div>
+                    <div class="reward-name">Bonus Sheckles</div>
+                    <div class="reward-description">Extra currency for your progress</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/rarity-guide">Rarity Guide</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/legal">Legal</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2024 GAG Recipes. All rights reserved. Not affiliated with Roblox Corporation.</p>
+    </footer>
+
+    <script>
+        // Countdown timer functionality
+        function updateCountdowns() {
+            const now = new Date();
+            const hour = now.getHours();
+            
+            // Define order periods
+            const periods = [
+                { start: 0, end: 12, name: 'countdown-1' },
+                { start: 12, end: 18, name: 'countdown-2' },
+                { start: 18, end: 24, name: 'countdown-3' }
+            ];
+            
+            periods.forEach((period, index) => {
+                const countdownElement = document.getElementById(period.name);
+                let timeLeft = '';
+                
+                if (hour >= period.start && hour < period.end) {
+                    // Current period
+                    const endTime = new Date();
+                    endTime.setHours(period.end, 0, 0, 0);
+                    const diff = endTime - now;
+                    
+                    const hours = Math.floor(diff / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    
+                    timeLeft = `${hours}h ${minutes}m remaining`;
+                } else if (hour < period.start) {
+                    // Upcoming period today
+                    const startTime = new Date();
+                    startTime.setHours(period.start, 0, 0, 0);
+                    const diff = startTime - now;
+                    
+                    const hours = Math.floor(diff / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    
+                    timeLeft = `Starts in ${hours}h ${minutes}m`;
+                } else {
+                    // Next period tomorrow
+                    const startTime = new Date();
+                    startTime.setDate(startTime.getDate() + 1);
+                    startTime.setHours(period.start, 0, 0, 0);
+                    const diff = startTime - now;
+                    
+                    const hours = Math.floor(diff / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    
+                    timeLeft = `Starts in ${hours}h ${minutes}m`;
+                }
+                
+                countdownElement.textContent = timeLeft;
+            });
+        }
+        
+        // Update countdowns immediately and every minute
+        updateCountdowns();
+        setInterval(updateCountdowns, 60000);
+        
+        // Add hover animations for order cards
+        const orderCards = document.querySelectorAll('.order-card');
+        orderCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+        
+        // Add hover animations for event cards
+        const eventCards = document.querySelectorAll('.event-card');
+        eventCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+        
+        // Add hover animations for tip cards
+        const tipCards = document.querySelectorAll('.tip-card');
+        tipCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+        
+        // Add hover animations for reward cards
+        const rewardCards = document.querySelectorAll('.reward-card');
+        rewardCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.05)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Animate elements as they come into view
+        const animatedElements = document.querySelectorAll('.order-card, .event-card, .tip-card, .reward-card');
+        animatedElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFDBC4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E6C3A3;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="chefHatGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F0F0F0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="uniformGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E55A5A;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="75" cy="75" r="70" fill="url(#chefHatGradient)" opacity="0.1" filter="url(#shadow)"/>
+  
+  <!-- Chef Hat -->
+  <ellipse cx="75" cy="35" rx="25" ry="8" fill="url(#chefHatGradient)" filter="url(#shadow)"/>
+  <path d="M 50 35 Q 50 25 75 25 Q 100 25 100 35" fill="url(#chefHatGradient)"/>
+  <ellipse cx="75" cy="25" rx="20" ry="6" fill="url(#chefHatGradient)"/>
+  
+  <!-- Face -->
+  <circle cx="75" cy="65" r="20" fill="url(#skinGradient)" filter="url(#shadow)"/>
+  
+  <!-- Eyes -->
+  <circle cx="70" cy="60" r="3" fill="#333333"/>
+  <circle cx="80" cy="60" r="3" fill="#333333"/>
+  <circle cx="71" cy="59" r="1" fill="#FFFFFF"/>
+  <circle cx="81" cy="59" r="1" fill="#FFFFFF"/>
+  
+  <!-- Nose -->
+  <ellipse cx="75" cy="68" rx="2" ry="3" fill="#E6C3A3"/>
+  
+  <!-- Mouth -->
+  <path d="M 70 75 Q 75 78 80 75" stroke="#333333" stroke-width="2" fill="none"/>
+  
+  <!-- Mustache -->
+  <path d="M 65 72 Q 70 74 75 73 Q 80 74 85 72" stroke="#333333" stroke-width="1.5" fill="none"/>
+  
+  <!-- Uniform -->
+  <rect x="55" y="85" width="40" height="25" fill="url(#uniformGradient)" rx="5" filter="url(#shadow)"/>
+  
+  <!-- Uniform buttons -->
+  <circle cx="75" cy="95" r="2" fill="#FFFFFF"/>
+  <circle cx="75" cy="100" r="2" fill="#FFFFFF"/>
+  <circle cx="75" cy="105" r="2" fill="#FFFFFF"/>
+  
+  <!-- Arms -->
+  <ellipse cx="55" cy="90" rx="8" ry="15" fill="url(#skinGradient)" transform="rotate(-20 55 90)"/>
+  <ellipse cx="95" cy="90" rx="8" ry="15" fill="url(#skinGradient)" transform="rotate(20 95 90)"/>
+  
+  <!-- Hands -->
+  <circle cx="50" cy="105" r="5" fill="url(#skinGradient)"/>
+  <circle cx="100" cy="105" r="5" fill="url(#skinGradient)"/>
+  
+  <!-- Cooking utensils -->
+  <line x1="45" y1="100" x2="45" y2="115" stroke="#8B4513" stroke-width="3" stroke-linecap="round"/>
+  <line x1="105" y1="100" x2="105" y2="115" stroke="#8B4513" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Spoon and fork heads -->
+  <ellipse cx="45" cy="115" rx="3" ry="1" fill="#8B4513"/>
+  <path d="M 105 115 L 108 113 L 108 117 Z" fill="#8B4513"/>
+  
+  <!-- Name tag -->
+  <rect x="60" y="115" width="30" height="15" fill="#FFFFFF" rx="3" filter="url(#shadow)"/>
+  <text x="75" y="125" text-anchor="middle" fill="#333333" font-family="Arial" font-size="8" font-weight="bold">CHRIS P.</text>
+  
+  <!-- Sparkle effects -->
+  <polygon points="25,25 27,27 29,25 27,23" fill="#FFD700" opacity="0.8"/>
+  <polygon points="125,25 127,27 129,25 127,23" fill="#FFD700" opacity="0.8"/>
+  <polygon points="75,15 77,17 79,15 77,13" fill="#FFD700" opacity="0.8"/>
+</svg>
