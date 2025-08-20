@@ -48,7 +48,7 @@
                 radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
             pointer-events: none;
-            z-index: -1;
+            z-index: -1; pointer-events: none;
         }
         
         .header-container {
@@ -111,7 +111,7 @@
             position: relative;
         }
         
-        nav a {
+        nav a { cursor: pointer; display: block; z-index: 10;
             text-decoration: none;
             color: #333;
             font-weight: 600;
@@ -120,6 +120,9 @@
             border-radius: 25px;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
+            display: block;
+            z-index: 10;
         }
         
         nav a::before {
@@ -131,7 +134,8 @@
             height: 100%;
             background: linear-gradient(45deg, #667eea, #764ba2);
             transition: left 0.3s ease;
-            z-index: -1;
+            z-index: -1; pointer-events: none;
+            pointer-events: none;
         }
         
         nav a:hover::before,
@@ -172,7 +176,7 @@
             height: 100%;
             background: linear-gradient(45deg, #667eea, #764ba2);
             transition: left 0.3s ease;
-            z-index: -1;
+            z-index: -1; pointer-events: none;
         }
         
         .lang-btn:hover::before,
@@ -374,7 +378,7 @@
             height: 100%;
             background: linear-gradient(45deg, #667eea, #764ba2);
             transition: left 0.3s ease;
-            z-index: -1;
+            z-index: -1; pointer-events: none;
         }
         
         .filter-btn:hover::before,
@@ -975,9 +979,7 @@
                 </ul>
             </nav>
             <div class="language-selector">
-                <button class="lang-btn active">English (EN)</button>
-                <button class="lang-btn">æ—¥æœ¬èªž (JP)</button>
-                <button class="lang-btn">EspaÃ±ol (ES)</button>
+                <button class="lang-btn active">EN</button>
             </div>
         </div>
     </header>
@@ -1041,8 +1043,8 @@
                     <div class="recipe-ingredients">
                         <h4>Ingredients:</h4>
                         <ul class="ingredient-list">
-                            <li>â€¢ Any single crop or random mix</li>
-                            <li>â€¢ Default outcome for invalid combos</li>
+                            <li>â€?Any single crop or random mix</li>
+                            <li>â€?Default outcome for invalid combos</li>
                         </ul>
                 </div>
                     <div class="recipe-rarity">
@@ -1055,7 +1057,7 @@
                     <span class="tag">Easy</span>
                     <span class="tag">Quick</span>
                 </div>
-                <a href="/rarity-guide" class="view-details-btn">ðŸ“– View Rarity Guide â†’</a>
+                <a href="/rarity-guide" class="view-details-btn">ðŸ“– View Rarity Guide â†?/a>
             </div>
 
             <!-- Salad -->
@@ -1069,7 +1071,7 @@
                     <div class="recipe-ingredients">
                         <h4>Ingredients:</h4>
                         <ul class="ingredient-list">
-                            <li>â€¢ 2x Tomato</li>
+                            <li>â€?2x Tomato</li>
                         </ul>
                 </div>
                     <div class="recipe-rarity">
@@ -1081,7 +1083,7 @@
                     <div class="recipe-ingredients">
                         <h4>Ingredients:</h4>
                         <ul class="ingredient-list">
-                            <li>â€¢ 4x Bone Blossom + 1x Tomato</li>
+                            <li>â€?4x Bone Blossom + 1x Tomato</li>
                         </ul>
                     </div>
                     <div class="recipe-rarity">
@@ -1094,7 +1096,7 @@
                     <span class="tag">Easy</span>
                     <span class="tag">Bone Blossom</span>
                 </div>
-                <a href="/rarity-guide" class="view-details-btn">ðŸ“– View Rarity Guide â†’</a>
+                <a href="/rarity-guide" class="view-details-btn">ðŸ“– View Rarity Guide â†?/a>
             </div>
 
             <!-- Sandwich -->
@@ -1108,7 +1110,7 @@
                     <div class="recipe-ingredients">
                         <h4>Ingredients:</h4>
                         <ul class="ingredient-list">
-                            <li>â€¢ 2x Tomato + 1x Corn</li>
+                            <li>â€?2x Tomato + 1x Corn</li>
                         </ul>
                     </div>
                     <div class="recipe-rarity">
@@ -1120,7 +1122,7 @@
                     <div class="recipe-ingredients">
                         <h4>Ingredients:</h4>
                         <ul class="ingredient-list">
-                            <li>â€¢ Apple + 2x Tomato + Corn + Bamboo</li>
+                            <li>â€?Apple + 2x Tomato + Corn + Bamboo</li>
                         </ul>
                     </div>
                     <div class="recipe-rarity">
@@ -1133,7 +1135,7 @@
                     <span class="tag">Medium</span>
                     <span class="tag">Bamboo</span>
                 </div>
-                <a href="/rarity-guide" class="view-details-btn">ðŸ“– View Rarity Guide â†’</a>
+                <a href="/rarity-guide" class="view-details-btn">ðŸ“– View Rarity Guide â†?/a>
             </div>
 
             <!-- Pizza -->
@@ -1147,7 +1149,7 @@
                     <div class="recipe-ingredients">
                         <h4>Ingredients:</h4>
                         <ul class="ingredient-list">
-                            <li>â€¢ Banana + Tomato</li>
+                            <li>â€?Banana + Tomato</li>
                         </ul>
                     </div>
                     <div class="recipe-rarity">
@@ -1159,7 +1161,7 @@
                     <div class="recipe-ingredients">
                         <h4>Ingredients:</h4>
                         <ul class="ingredient-list">
-                            <li>â€¢ Giant Pinecone + Corn + Apple + Pepper + Strawberry</li>
+                            <li>â€?Giant Pinecone + Corn + Apple + Pepper + Strawberry</li>
                         </ul>
                 </div>
                     <div class="recipe-rarity">
@@ -1173,7 +1175,7 @@
                     <span class="tag">Best Rewards</span>
                 </div>
                 <p style="color: #667eea; font-weight: bold; margin-top: 1rem;">ðŸ’¡ Tip: Prismatic Pizza gives the best rewards!</p>
-                <a href="/rarity-guide" class="view-details-btn">ðŸ“– View Rarity Guide â†’</a>
+                <a href="/rarity-guide" class="view-details-btn">ðŸ“– View Rarity Guide â†?/a>
             </div>
 
             <!-- Sushi -->
@@ -1187,7 +1189,7 @@
                     <div class="recipe-ingredients">
                         <h4>Ingredients:</h4>
                         <ul class="ingredient-list">
-                            <li>â€¢ 4x Bamboo + 1x Corn</li>
+                            <li>â€?4x Bamboo + 1x Corn</li>
                         </ul>
                 </div>
                     <div class="recipe-rarity">
@@ -1201,7 +1203,7 @@
                     <span class="tag">Popular</span>
                 </div>
                 <p style="color: #667eea; font-weight: bold; margin-top: 1rem;">ðŸ’¡ Tip: You need Bamboo! Many players don't have it ready.</p>
-                <a href="/rarity-guide" class="view-details-btn">ðŸ“– View Rarity Guide â†’</a>
+                <a href="/rarity-guide" class="view-details-btn">ðŸ“– View Rarity Guide â†?/a>
             </div>
 
             <!-- Cake -->
@@ -1215,7 +1217,7 @@
                     <div class="recipe-ingredients">
                         <h4>Ingredients:</h4>
                         <ul class="ingredient-list">
-                            <li>â€¢ 2x Corn + Strawberry + Blueberry</li>
+                            <li>â€?2x Corn + Strawberry + Blueberry</li>
                         </ul>
                     </div>
                     <div class="recipe-rarity">
@@ -1227,7 +1229,7 @@
                     <div class="recipe-ingredients">
                         <h4>Ingredients:</h4>
                         <ul class="ingredient-list">
-                            <li>â€¢ 2x Corn + 2x Banana</li>
+                            <li>â€?2x Corn + 2x Banana</li>
                         </ul>
                 </div>
                     <div class="recipe-rarity">
@@ -1240,14 +1242,14 @@
                     <span class="tag">Hard</span>
                     <span class="tag">Multiple Variants</span>
                 </div>
-                <a href="/rarity-guide" class="view-details-btn">ðŸ“– View Rarity Guide â†’</a>
+                <a href="/rarity-guide" class="view-details-btn">ðŸ“– View Rarity Guide â†?/a>
                 </div>
             </div>
 
         <div class="chris-p-section">
             <h2>ðŸ”¥ Cooking Event Active!</h2>
             <p>Feed Chris P. with the right recipes to get exclusive rewards</p>
-            <a href="/events" class="view-details-btn" style="background: rgba(255,255,255,0.2);">View Today's Orders â†’</a>
+            <a href="/events" class="view-details-btn" style="background: rgba(255,255,255,0.2);">View Today's Orders â†?/a>
             
             <div class="orders-grid">
                 <div class="order-card">
@@ -1271,50 +1273,50 @@
                 <div class="rarity-card" style="background: #f8f9fa;">
                     <h3>Normal</h3>
                     <ul>
-                        <li>â€¢ Basic Sheckles</li>
-                        <li>â€¢ Common Seeds</li>
-                        <li>â€¢ Watering Cans</li>
+                        <li>â€?Basic Sheckles</li>
+                        <li>â€?Common Seeds</li>
+                        <li>â€?Watering Cans</li>
                     </ul>
                 </div>
                 <div class="rarity-card" style="background: #e3f2fd;">
                     <h3>Rare</h3>
                     <ul>
-                        <li>â€¢ More Sheckles</li>
-                        <li>â€¢ Rare Seeds</li>
-                        <li>â€¢ Speed Boost</li>
+                        <li>â€?More Sheckles</li>
+                        <li>â€?Rare Seeds</li>
+                        <li>â€?Speed Boost</li>
                     </ul>
                 </div>
                 <div class="rarity-card" style="background: #fff3e0;">
                     <h3>Legendary</h3>
                     <ul>
-                        <li>â€¢ Legendary Seeds</li>
-                        <li>â€¢ Special Tools</li>
-                        <li>â€¢ Cosmetics</li>
+                        <li>â€?Legendary Seeds</li>
+                        <li>â€?Special Tools</li>
+                        <li>â€?Cosmetics</li>
                     </ul>
                 </div>
                 <div class="rarity-card" style="background: #ffebee;">
                     <h3>Mythic</h3>
                     <ul>
-                        <li>â€¢ Mythic Seeds</li>
-                        <li>â€¢ Exclusive Pets</li>
-                        <li>â€¢ Rare Cosmetics</li>
+                        <li>â€?Mythic Seeds</li>
+                        <li>â€?Exclusive Pets</li>
+                        <li>â€?Rare Cosmetics</li>
                     </ul>
                 </div>
                 <div class="rarity-card" style="background: #f3e5f5;">
                     <h3>Divine</h3>
                     <ul>
-                        <li>â€¢ Divine Seeds</li>
-                        <li>â€¢ Unique Pets</li>
-                        <li>â€¢ Special Effects</li>
+                        <li>â€?Divine Seeds</li>
+                        <li>â€?Unique Pets</li>
+                        <li>â€?Special Effects</li>
                     </ul>
                 </div>
                 <div class="rarity-card" style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4); color: white;">
                     <h3>Prismatic</h3>
                     <ul>
-                        <li>â€¢ Gourmet Seed Pack</li>
-                        <li>â€¢ Gourmet Egg</li>
-                        <li>â€¢ Mochi Mouse Pet</li>
-                        <li>â€¢ Taco Fern Seeds</li>
+                        <li>â€?Gourmet Seed Pack</li>
+                        <li>â€?Gourmet Egg</li>
+                        <li>â€?Mochi Mouse Pet</li>
+                        <li>â€?Taco Fern Seeds</li>
                     </ul>
                 </div>
             </div>

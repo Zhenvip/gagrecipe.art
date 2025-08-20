@@ -48,7 +48,7 @@
                 radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
             pointer-events: none;
-            z-index: -1;
+            z-index: -1; pointer-events: none;
         }
         
         .header-container {
@@ -80,7 +80,7 @@
             gap: 2rem;
         }
         
-        nav a {
+        nav a { cursor: pointer; display: block; z-index: 10;
             text-decoration: none;
             color: #333;
             font-weight: 600;
@@ -520,10 +520,10 @@
                     <div class="rarity-title">Normal</div>
                     <div class="rarity-description">Basic recipes with standard rewards</div>
                     <ul class="rewards-list">
-                        <li>‚Ä¢ Basic Sheckles</li>
-                        <li>‚Ä¢ Common Seeds</li>
-                        <li>‚Ä¢ Watering Cans</li>
-                        <li>‚Ä¢ Basic Tools</li>
+                        <li>‚Ä?Basic Sheckles</li>
+                        <li>‚Ä?Common Seeds</li>
+                        <li>‚Ä?Watering Cans</li>
+                        <li>‚Ä?Basic Tools</li>
                     </ul>
                     <div class="rarity-stats">
                         <div class="stat-item">
@@ -538,14 +538,14 @@
                 </div>
 
                 <div class="rarity-card rare">
-                    <div class="rarity-icon">‚≠ê</div>
+                    <div class="rarity-icon">‚≠?/div>
                     <div class="rarity-title">Rare</div>
                     <div class="rarity-description">Improved recipes with better rewards</div>
                     <ul class="rewards-list">
-                        <li>‚Ä¢ More Sheckles</li>
-                        <li>‚Ä¢ Rare Seeds</li>
-                        <li>‚Ä¢ Speed Boost</li>
-                        <li>‚Ä¢ Enhanced Tools</li>
+                        <li>‚Ä?More Sheckles</li>
+                        <li>‚Ä?Rare Seeds</li>
+                        <li>‚Ä?Speed Boost</li>
+                        <li>‚Ä?Enhanced Tools</li>
                     </ul>
                     <div class="rarity-stats">
                         <div class="stat-item">
@@ -564,10 +564,10 @@
                     <div class="rarity-title">Legendary</div>
                     <div class="rarity-description">Powerful recipes with premium rewards</div>
                     <ul class="rewards-list">
-                        <li>‚Ä¢ Legendary Seeds</li>
-                        <li>‚Ä¢ Special Tools</li>
-                        <li>‚Ä¢ Cosmetics</li>
-                        <li>‚Ä¢ Rare Pets</li>
+                        <li>‚Ä?Legendary Seeds</li>
+                        <li>‚Ä?Special Tools</li>
+                        <li>‚Ä?Cosmetics</li>
+                        <li>‚Ä?Rare Pets</li>
                     </ul>
                     <div class="rarity-stats">
                         <div class="stat-item">
@@ -586,10 +586,10 @@
                     <div class="rarity-title">Mythic</div>
                     <div class="rarity-description">Epic recipes with exclusive rewards</div>
                     <ul class="rewards-list">
-                        <li>‚Ä¢ Mythic Seeds</li>
-                        <li>‚Ä¢ Exclusive Pets</li>
-                        <li>‚Ä¢ Rare Cosmetics</li>
-                        <li>‚Ä¢ Special Effects</li>
+                        <li>‚Ä?Mythic Seeds</li>
+                        <li>‚Ä?Exclusive Pets</li>
+                        <li>‚Ä?Rare Cosmetics</li>
+                        <li>‚Ä?Special Effects</li>
                     </ul>
                     <div class="rarity-stats">
                         <div class="stat-item">
@@ -604,14 +604,14 @@
                 </div>
 
                 <div class="rarity-card divine">
-                    <div class="rarity-icon">‚ú®</div>
+                    <div class="rarity-icon">‚ú?/div>
                     <div class="rarity-title">Divine</div>
                     <div class="rarity-description">Sacred recipes with divine rewards</div>
                     <ul class="rewards-list">
-                        <li>‚Ä¢ Divine Seeds</li>
-                        <li>‚Ä¢ Unique Pets</li>
-                        <li>‚Ä¢ Special Effects</li>
-                        <li>‚Ä¢ Exclusive Items</li>
+                        <li>‚Ä?Divine Seeds</li>
+                        <li>‚Ä?Unique Pets</li>
+                        <li>‚Ä?Special Effects</li>
+                        <li>‚Ä?Exclusive Items</li>
                     </ul>
                     <div class="rarity-stats">
                         <div class="stat-item">
@@ -630,10 +630,10 @@
                     <div class="rarity-title">Prismatic</div>
                     <div class="rarity-description">Ultimate recipes with legendary rewards</div>
                     <ul class="rewards-list">
-                        <li>‚Ä¢ Gourmet Seed Pack</li>
-                        <li>‚Ä¢ Gourmet Egg</li>
-                        <li>‚Ä¢ Mochi Mouse Pet</li>
-                        <li>‚Ä¢ Taco Fern Seeds</li>
+                        <li>‚Ä?Gourmet Seed Pack</li>
+                        <li>‚Ä?Gourmet Egg</li>
+                        <li>‚Ä?Mochi Mouse Pet</li>
+                        <li>‚Ä?Taco Fern Seeds</li>
                     </ul>
                     <div class="rarity-stats">
                         <div class="stat-item">
@@ -659,7 +659,7 @@
                 </div>
                 
                 <div class="tip-card">
-                    <div class="tip-icon">‚è∞</div>
+                    <div class="tip-icon">‚è?/div>
                     <div class="tip-title">Check Chris P. Orders</div>
                     <div class="tip-description">Feed him the right GAG recipes for bonus rewards and exclusive items. His orders change every 6 hours!</div>
                 </div>

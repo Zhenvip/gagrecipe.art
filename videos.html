@@ -48,7 +48,7 @@
                 radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
             pointer-events: none;
-            z-index: -1;
+            z-index: -1; pointer-events: none;
         }
         
         .header-container {
@@ -120,6 +120,9 @@
             border-radius: 25px;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
+            display: block;
+            z-index: 10;
         }
         
         nav a::before {
@@ -132,6 +135,7 @@
             background: linear-gradient(45deg, #667eea, #764ba2);
             transition: left 0.3s ease;
             z-index: -1;
+            pointer-events: none;
         }
         
         nav a:hover::before,
@@ -172,7 +176,7 @@
             height: 100%;
             background: linear-gradient(45deg, #667eea, #764ba2);
             transition: left 0.3s ease;
-            z-index: -1;
+            z-index: -1; pointer-events: none;
         }
         
         .lang-btn:hover::before,
@@ -715,7 +719,7 @@
 
         <div class="featured-video">
             <div class="featured-header">
-                <span class="featured-star">⭐</span>
+                <span class="featured-star">�?/span>
                 Featured Video
             </div>
             <div class="featured-content">
